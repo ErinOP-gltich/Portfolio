@@ -2,9 +2,9 @@
 
 # 🛰️ Aman Goswami — Portfolio
 
-**Front-end developer · Network security learner (CCNA track) · Blockchain tinkerer · Motion designer**
+**Front-end developer · Security learner (CCNA + CompTIA Security+) · Blockchain tinkerer · Motion designer**
 
-A single-file portfolio with a live network canvas, a working subnet calculator and a hand-built SHA-256 blockchain, all in one `index.html`.
+A single-file portfolio with a live network canvas, a subnet calculator, a firewall ACL tester, a password strength checker and a from-scratch SHA-256 blockchain, all in one `index.html`.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -26,7 +26,9 @@ I'm **Aman Goswami**, a 3rd-year B.Tech Computer Science & Engineering student a
 
 ## 🔗 Live demo
 
-`https://erin-portfolio-main.vercel.app`
+`https://<your-github-username>.github.io/<repo-name>/`
+
+*(Replace this with your GitHub Pages link once it's deployed. See [Deploy](#-deploy-to-github-pages) below.)*
 
 ## ✨ Features
 
@@ -36,10 +38,13 @@ I'm **Aman Goswami**, a 3rd-year B.Tech Computer Science & Engineering student a
 |---|---|
 | **Interactive hero** | Canvas network where nodes link up, your cursor pulls connections toward it, and amber "packets" travel between nodes. A terminal types out a profile ending in a playful `nmap` scan. |
 | **Skills** | Front-end, network security and blockchain, each skill honestly rated *Solid*, *Working* or *Learning*. |
-| **CCNA path** | Progress across the six CCNA 200-301 exam domains, with official exam weightings. |
+| **Certification path** | Switch between **Cisco CCNA 200-301** (6 domains) and **CompTIA Security+ SY0-701** (5 domains) to see progress, with each exam's official weightings. |
 | **Projects** | Filterable project grid. Each card opens a case study with the problem, what I built and what I learned. |
 | **Subnet calculator** | Live IPv4 calculator: network, broadcast, host range, mask, wildcard, class and a colour-coded binary view. Handles `/31` and `/32` correctly. |
 | **Mini blockchain** | Proof-of-work demo on a **hand-written SHA-256**. Edit a block and every block after it breaks. Re-mine to repair the chain. Adjustable difficulty. |
+| **Firewall ACL tester** | Write Cisco-style extended ACLs, then send a test packet through them. Shows top-down, first-match evaluation, the implicit `deny any`, and a line-by-line trace. Supports wildcard masks, `host`/`any`, `eq`/`neq`/`lt`/`gt`/`range` and named ports. |
+| **Password strength checker** | Estimates entropy and crack time in three attack scenarios (rate-limited online, bcrypt offline, fast-hash GPU). Catches common passwords even with leetspeak or a year added (`P@ssw0rd2024` is rated *very weak*), plus sequences, keyboard walks, repeats and passphrases. Includes a cryptographically secure password generator. Runs fully in the browser. |
+| **Rotating headline** | "Let's build something *together*" slides through words (secure, beautiful, accessible…) in a seamless loop, and the full stop glides to fit each word. |
 
 ### Creative & people tab
 
@@ -52,7 +57,8 @@ I'm **Aman Goswami**, a 3rd-year B.Tech Computer Science & Engineering student a
 
 ### Under the hood
 
-- 🎨 **Theme per tab.** Switching tabs changes the page accent from violet/amber to rose/mint.
+- 🧊 **Glassmorphism.** Frosted panels with `backdrop-filter` float over a slowly drifting aurora background and a faint grid.
+- 🎨 **Theme per tab.** Switching tabs shifts the page from iris/peach to pink/aqua, and the aurora follows.
 - ♿ **Accessible.** Semantic HTML, ARIA tabs with arrow-key navigation, visible focus rings, a native `<dialog>` for case studies, and full `prefers-reduced-motion` support.
 - 📱 **Responsive** from wide desktops down to 360px phones, with safe-area support for notched screens.
 - ⚡ **Zero dependencies.** No framework, no build step, no npm. One file, loads instantly.
@@ -117,18 +123,19 @@ Netlify and Vercel work too: drag the folder in and it's live.
 
 | To change… | Edit… |
 |---|---|
-| Colours | CSS variables in `:root` (`--violet`, `--amber`, `--rose`, `--mint`, …) |
+| Colours | CSS variables in `:root` (`--violet`, `--amber`, `--rose`, `--mint`, `--blue`, …) |
+| Glass strength | `--glass` (blur/saturation) and `--surface` (panel tint) in `:root` |
 | Fonts | The Google Fonts `<link>` and `--display` / `--body` / `--mono` |
 | Projects | The `projects` array in `<script>`. Each entry has `title`, `blurb`, `stack`, `problem`, `built`, `learned`. Use `size: 'feature' \| 'wide' \| 'full' \| ''` to control the card's width. |
 | Skills & levels | The `.skill-list` items in the Skills section (`solid`, `working`, `learning`) |
-| CCNA progress | Move the `done` / `now` classes on the `.step` elements |
+| Cert progress | The `CERTS` object in `<script>`. Set each domain's status to `'done'`, `'now'` or `''` |
 | Terminal text | The `lines` array in `<script>` |
 | Rotating roles | The `roles` array |
 | LinkedIn | Replace the "Profile coming soon" card in `#contact` with an `<a href="…">` card |
 
 ## 🧰 Built with
 
-**HTML5** · **CSS3** (Grid, custom properties, `color-mix()`, keyframes) · **Vanilla JavaScript** (Canvas API, `IntersectionObserver`, `<dialog>`, Clipboard API) · Fonts: [Unbounded](https://fonts.google.com/specimen/Unbounded), [Figtree](https://fonts.google.com/specimen/Figtree), [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
+**HTML5** · **CSS3** (Grid, custom properties, `backdrop-filter`, `color-mix()`, keyframes) · **Vanilla JavaScript** (Canvas API, `IntersectionObserver`, `<dialog>`, Clipboard API) · Fonts: [Unbounded](https://fonts.google.com/specimen/Unbounded), [Figtree](https://fonts.google.com/specimen/Figtree), [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
 
 ## 📬 Contact
 
