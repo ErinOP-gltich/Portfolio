@@ -4,7 +4,7 @@
 
 **Front-end developer · Security learner (CCNA + CompTIA Security+) · Blockchain tinkerer · Motion designer**
 
-A single-file portfolio with a live network canvas, a subnet calculator, a firewall ACL tester, a password strength checker and a from-scratch SHA-256 blockchain, all in one `index.html`.
+A single-file portfolio with a live network canvas, a working subnet calculator and a hand-built SHA-256 blockchain, all in one `index.html`.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -26,9 +26,8 @@ I'm **Aman Goswami**, a 3rd-year B.Tech Computer Science & Engineering student a
 
 ## 🔗 Live demo
 
-`https://<your-github-username>.github.io/<repo-name>/`
+`https://erin-portfolio-main.vercel.app/`
 
-*(Replace this with your GitHub Pages link once it's deployed. See [Deploy](#-deploy-to-github-pages) below.)*
 
 ## ✨ Features
 
@@ -42,9 +41,6 @@ I'm **Aman Goswami**, a 3rd-year B.Tech Computer Science & Engineering student a
 | **Projects** | Filterable project grid. Each card opens a case study with the problem, what I built and what I learned. |
 | **Subnet calculator** | Live IPv4 calculator: network, broadcast, host range, mask, wildcard, class and a colour-coded binary view. Handles `/31` and `/32` correctly. |
 | **Mini blockchain** | Proof-of-work demo on a **hand-written SHA-256**. Edit a block and every block after it breaks. Re-mine to repair the chain. Adjustable difficulty. |
-| **Firewall ACL tester** | Write Cisco-style extended ACLs, then send a test packet through them. Shows top-down, first-match evaluation, the implicit `deny any`, and a line-by-line trace. Supports wildcard masks, `host`/`any`, `eq`/`neq`/`lt`/`gt`/`range` and named ports. |
-| **Password strength checker** | Estimates entropy and crack time in three attack scenarios (rate-limited online, bcrypt offline, fast-hash GPU). Catches common passwords even with leetspeak or a year added (`P@ssw0rd2024` is rated *very weak*), plus sequences, keyboard walks, repeats and passphrases. Includes a cryptographically secure password generator. Runs fully in the browser. |
-| **Rotating headline** | "Let's build something *together*" slides through words (secure, beautiful, accessible…) in a seamless loop, and the full stop glides to fit each word. |
 
 ### Creative & people tab
 
