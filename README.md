@@ -4,7 +4,7 @@
 
 **Front-end developer · Security learner (CCNA + CompTIA Security+) · Blockchain tinkerer · Motion designer**
 
-A single-file portfolio with a live network canvas, a working subnet calculator and a hand-built SHA-256 blockchain, all in one `index.html`.
+A single-file portfolio: hand-written 3D on a 2D canvas, a portrait that reacts to your cursor, an offline site assistant, a command palette and four working tools, all in one `index.html`. No framework, no build step.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -26,8 +26,7 @@ I'm **Aman Goswami**, a 3rd-year B.Tech Computer Science & Engineering student a
 
 ## 🔗 Live demo
 
-`https://erin-portfolio-main.vercel.app/`
-
+`https://aman-portfolio-resume.vercel.app/`
 
 ## ✨ Features
 
@@ -35,12 +34,19 @@ I'm **Aman Goswami**, a 3rd-year B.Tech Computer Science & Engineering student a
 
 | Section | What it does |
 |---|---|
-| **Interactive hero** | Canvas network where nodes link up, your cursor pulls connections toward it, and amber "packets" travel between nodes. A terminal types out a profile ending in a playful `nmap` scan. |
+| **3D hero field** | A rotating sphere of linked points, projected by hand on a 2D canvas (no three.js) and tilted by your cursor. |
+| **3D network lab** | My Packet Tracer campus build as a draggable 3D diagram: core router, switches, VLANs, moving packets, and a dashed link where the ACL denies traffic. |
+| **Dot-matrix portrait** | My photo drawn as a grid of dots. Move the cursor and the real photo feathers through, while the frame tilts in 3D. |
+| **Site assistant** | Answers questions about my projects, stack, certifications and availability. Keyword matching over a built-in knowledge base: no API key, no network calls, works offline. |
+| **Command palette** | `Ctrl K` to jump to a section, open a case study, copy my email, or send a question straight to the assistant. |
 | **Skills** | Front-end, network security and blockchain, each skill honestly rated *Solid*, *Working* or *Learning*. |
 | **Certification path** | Switch between **Cisco CCNA 200-301** (6 domains) and **CompTIA Security+ SY0-701** (5 domains) to see progress, with each exam's official weightings. |
 | **Projects** | Filterable project grid. Each card opens a case study with the problem, what I built and what I learned. |
 | **Subnet calculator** | Live IPv4 calculator: network, broadcast, host range, mask, wildcard, class and a colour-coded binary view. Handles `/31` and `/32` correctly. |
 | **Mini blockchain** | Proof-of-work demo on a **hand-written SHA-256**. Edit a block and every block after it breaks. Re-mine to repair the chain. Adjustable difficulty. |
+| **Firewall ACL tester** | Write Cisco-style extended ACLs, then send a test packet through them. Shows top-down, first-match evaluation, the implicit `deny any`, and a line-by-line trace. Supports wildcard masks, `host`/`any`, `eq`/`neq`/`lt`/`gt`/`range` and named ports. |
+| **Password strength checker** | Estimates entropy and crack time in three attack scenarios (rate-limited online, bcrypt offline, fast-hash GPU). Catches common passwords even with leetspeak or a year added (`P@ssw0rd2024` is rated *very weak*), plus sequences, keyboard walks, repeats and passphrases. Includes a cryptographically secure password generator. Runs fully in the browser. |
+| **Rotating headline** | "Let's build something *together*" slides through words (secure, beautiful, accessible…) in a seamless loop, and the full stop glides to fit each word. |
 
 ### Creative & people tab
 
@@ -53,8 +59,8 @@ I'm **Aman Goswami**, a 3rd-year B.Tech Computer Science & Engineering student a
 
 ### Under the hood
 
-- 🧊 **Glassmorphism.** Frosted panels with `backdrop-filter` float over a slowly drifting aurora background and a faint grid.
-- 🎨 **Theme per tab.** Switching tabs shifts the page from iris/peach to pink/aqua, and the aurora follows.
+- 🖤 **Monochrome by design.** Pure black, hairline borders, Inter at tight tracking, and one green accent reserved for anything live.
+- 🧭 **One page, seven sections.** Work, Security, Toolbox, Craft, About, Ask and Contact, with the nav tracking where you are.
 - ♿ **Accessible.** Semantic HTML, ARIA tabs with arrow-key navigation, visible focus rings, a native `<dialog>` for case studies, and full `prefers-reduced-motion` support.
 - 📱 **Responsive** from wide desktops down to 360px phones, with safe-area support for notched screens.
 - ⚡ **Zero dependencies.** No framework, no build step, no npm. One file, loads instantly.
@@ -88,9 +94,9 @@ Inside `index.html`:
 
 ```
 <style>     design tokens (:root) → layout → components → responsive → reduced motion
-<body>      nav · hero · Engineering panel · Creative panel · contact · dialog
-<script>    tabs · role cycler · terminal · network canvas · projects data
-            + modal · subnet calculator · SHA-256 · mini blockchain · copy buttons
+<body>      nav · hero · proof · work · security · toolbox · craft · about · ask · contact
+<script>    scroll reveal · 3D field · 3D topology · dot portrait · projects
+            + certs · assistant · command palette · the four tools · copy buttons
 ```
 
 ## 🚀 Run locally
@@ -119,13 +125,14 @@ Netlify and Vercel work too: drag the folder in and it's live.
 
 | To change… | Edit… |
 |---|---|
-| Colours | CSS variables in `:root` (`--violet`, `--amber`, `--rose`, `--mint`, `--blue`, …) |
-| Glass strength | `--glass` (blur/saturation) and `--surface` (panel tint) in `:root` |
+| Colours | CSS variables in `:root` (`--bg`, `--line`, `--dim`, `--live`, …) |
+| Assistant answers | The `KB` array in `<script>`: keywords plus the answer to give |
+| Command palette | The `CMD` array in `<script>` |
+| Photo | The `<img id="src">` data URL at the bottom of the file |
 | Fonts | The Google Fonts `<link>` and `--display` / `--body` / `--mono` |
 | Projects | The `projects` array in `<script>`. Each entry has `title`, `blurb`, `stack`, `problem`, `built`, `learned`. Use `size: 'feature' \| 'wide' \| 'full' \| ''` to control the card's width. |
 | Skills & levels | The `.skill-list` items in the Skills section (`solid`, `working`, `learning`) |
 | Cert progress | The `CERTS` object in `<script>`. Set each domain's status to `'done'`, `'now'` or `''` |
-| Terminal text | The `lines` array in `<script>` |
 | Rotating roles | The `roles` array |
 | LinkedIn | Replace the "Profile coming soon" card in `#contact` with an `<a href="…">` card |
 
