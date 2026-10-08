@@ -1,18 +1,18 @@
 <div align="center">
 
-# 🛰️ Aman Goswami — Portfolio
+# Aman Goswami · Portfolio
 
-**Front-end developer · Security learner (CCNA + CompTIA Security+) · Blockchain tinkerer · Motion designer**
+**Front-end developer · Network security learner (CCNA + Security+) · Founder of Cantilever**
 
-A single-file portfolio: hand-written 3D on a 2D canvas, a portrait that reacts to your cursor, an offline site assistant, a command palette and four working tools, all in one `index.html`. No framework, no build step.
+One `index.html`: a three.js code tunnel with a particle shield, a 3D campus network you can orbit, a real terminal, an AI-style assistant, live pings to my deployments, my GitHub pulled live, four working security tools and a printable résumé. Black, white and grey. No framework, no build step.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![No dependencies](https://img.shields.io/badge/dependencies-0-9D8CFF?style=for-the-badge)
-![Status](https://img.shields.io/badge/open%20to-internships-6EF0C4?style=for-the-badge)
+![HTML5](https://img.shields.io/badge/HTML5-111?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-111?style=for-the-badge&logo=css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-111?style=for-the-badge&logo=javascript&logoColor=white)
+![three.js](https://img.shields.io/badge/three.js-r128-111?style=for-the-badge&logo=threedotjs&logoColor=white)
+![Open to internships](https://img.shields.io/badge/open%20to-internships-fff?style=for-the-badge&labelColor=111)
 
-[**Live site**](#-live-demo) · [**Features**](#-features) · [**Run locally**](#-run-locally) · [**Contact**](#-contact)
+[**Features**](#-features) · [**Run locally**](#-run-locally) · [**Deploy**](#-deploy-to-github-pages) · [**Customise**](#-customise) · [**Contact**](#-contact)
 
 </div>
 
@@ -20,125 +20,110 @@ A single-file portfolio: hand-written 3D on a 2D canvas, a portrait that reacts 
 
 ## 👋 About
 
-I'm **Aman Goswami**, a 3rd-year B.Tech Computer Science & Engineering student at **VIT-AP University**. I build responsive interfaces, study how networks are attacked and defended, and experiment with smart contracts on Ethereum testnets. This site brings all of that together, plus my design and video work, in one place.
+I'm **Aman Goswami**, a third-year B.Tech Computer Science & Engineering student at **VIT-AP University**. I build websites and tools that real people run: the PCBL lab's website, admin console and inventory system, the MCML lab's website (in progress), the bioinfoaus.ac.in rework, and **Cantilever**, my marketplace for architects. Alongside that I'm working through **CCNA 200-301** and **CompTIA Security+**, and I recently went deep on routers, routing, localhosting and NAS setup.
 
 > **Open to** internships, freelance front-end work and collaboration.
 
-## 🔗 Live demo
-
-`https://aman-portfolio-resume.vercel.app/`
-
 ## ✨ Features
 
-### Engineering tab
+### Everywhere
+
+| | |
+|---|---|
+| **Hero in three.js** | A tunnel of flickering hex and shell glyphs streams toward you and bends toward the cursor, framing the AG shield drawn in ~16,000 particles. The cursor blows the particles apart and they settle back; every few seconds (and as you scroll) the shield morphs into a network graph, then a cube. |
+| **Smooth scrolling** | Lerped wheel scrolling in the style of Lenis, written by hand. Touch, keyboard and reduced motion stay native. |
+| **Custom cursor** | A dot that grows over links, says *Open* over projects and *Drag* over 3D scenes. Buttons are magnetic, cards tilt in 3D with a glare. |
+| **Backdrops** | Film grain, a cursor spotlight and a scroll progress bar. Headings rise in word by word. |
+| **Two-way switch** | **Technical ↔ Creative**. Switching floods the screen with a wave of tiles from the button you pressed, scrambles the new title, and swaps the page underneath. |
+| **Ask my AI** | A floating assistant like partharsid.dev's: suggested questions, answers streamed word by word, follow-ups. It is keyword matching over a built-in knowledge base, so it works offline and sends nothing anywhere. |
+| **Terminal** | Press <kbd>`</kbd> anywhere or tap the **>_ Terminal** button. Colour-coded output and tap-to-run command chips. `help`, `whoami`, `projects`, `open <id>`, `skills`, `certs`, `cd <section>`, `mode creative`, `ask <question>`, `resume`, `nmap`, `history`, `clear` and more, with Tab completion and ↑ ↓ history. |
+| **Command palette** | <kbd>⌘K</kbd> / <kbd>Ctrl K</kbd> to jump to a section, open a case study, the résumé, the terminal or the assistant. |
+| **Logo** | A shield with a glitching AG: security plus a bit of noise. Used for the nav, favicon and assistant avatar. |
+
+### Technical side
 
 | Section | What it does |
 |---|---|
-| **3D hero field** | A rotating sphere of linked points, projected by hand on a 2D canvas (no three.js) and tilted by your cursor. |
-| **3D network lab** | My Packet Tracer campus build as a draggable 3D diagram: core router, switches, VLANs, moving packets, and a dashed link where the ACL denies traffic. |
-| **Dot-matrix portrait** | My photo drawn as a grid of dots. Move the cursor and the real photo feathers through, while the frame tilts in 3D. |
-| **Site assistant** | Answers questions about my projects, stack, certifications and availability. Keyword matching over a built-in knowledge base: no API key, no network calls, works offline. |
-| **Command palette** | `Ctrl K` to jump to a section, open a case study, copy my email, or send a question straight to the assistant. |
-| **Skills** | Front-end, network security and blockchain, each skill honestly rated *Solid*, *Working* or *Learning*. |
-| **Certification path** | Switch between **Cisco CCNA 200-301** (6 domains) and **CompTIA Security+ SY0-701** (5 domains) to see progress, with each exam's official weightings. |
-| **Projects** | Filterable project grid. Each card opens a case study with the problem, what I built and what I learned. |
-| **Subnet calculator** | Live IPv4 calculator: network, broadcast, host range, mask, wildcard, class and a colour-coded binary view. Handles `/31` and `/32` correctly. |
-| **Mini blockchain** | Proof-of-work demo on a **hand-written SHA-256**. Edit a block and every block after it breaks. Re-mine to repair the chain. Adjustable difficulty. |
-| **Firewall ACL tester** | Write Cisco-style extended ACLs, then send a test packet through them. Shows top-down, first-match evaluation, the implicit `deny any`, and a line-by-line trace. Supports wildcard masks, `host`/`any`, `eq`/`neq`/`lt`/`gt`/`range` and named ports. |
-| **Password strength checker** | Estimates entropy and crack time in three attack scenarios (rate-limited online, bcrypt offline, fast-hash GPU). Catches common passwords even with leetspeak or a year added (`P@ssw0rd2024` is rated *very weak*), plus sequences, keyboard walks, repeats and passphrases. Includes a cryptographically secure password generator. Runs fully in the browser. |
-| **Rotating headline** | "Let's build something *together*" slides through words (secure, beautiful, accessible…) in a seamless loop, and the full stop glides to fit each word. |
+| **Proof** | A terminal that types `whoami`, `cat focus.txt` and a joke `nmap` scan, next to numbers that count up and are true. |
+| **Work** | Real screenshots of each live site in a browser frame (lab builds get labelled illustrations), with status (*Live*, *Building*, *Planning*), a case study and a link to the real site. Real builds and lab builds are labelled. |
+| **Building now** | Progress bars that show which stage each job is in (MCML website, MCML inventory, the bioinfoaus.ac.in rework, CCNA, Security+), never a guessed percentage. |
+| **Skills** | A 3D sphere of tool logos you can drag, plus every skill rated *Solid*, *Working* or *Learning* across web, networking and self-hosting, network security and blockchain. |
+| **Lab** | CCNA and Security+ progress (with the Cisco and CompTIA marks) against the official domains, and the **secure campus network in 3D**: core routers, three buildings, VLANs, packets, and the guest ACL drop drawn as a dashed red path. Click any device or layer (VLANs, OSPF, guest ACL, port security, SSH-only) for an explanation. |
+| **Toolbox** | Subnet calculator, Cisco-style ACL tester with a line-by-line trace, password strength checker, and a mini blockchain on a hand-written SHA-256. |
+| **Live** | Real round-trip times from *your* browser to each of my deployments, every five seconds while the section is on screen, with sparklines. |
+| **GitHub, live** | Contribution heatmap, streaks, best day, contributions per month, weekly rhythm, languages, where the commits went and the latest activity, pulled from GitHub in the browser and cached for 30 minutes. |
 
-### Creative & people tab
+### Creative side
 
-| Section | What it does |
-|---|---|
-| **Motion timeline** | An After Effects–style composition with keyframes and a playhead synced to an animated title. |
-| **Tools** | After Effects, Premiere Pro, Photoshop and Figma, with what I use each one for. |
-| **Soft skills** | Communication, presenting, teamwork, documentation, self-learning and time management, each with a real example. |
-| **Creative work** | Gallery of design and video pieces, drawn entirely in CSS. |
+Motion and design tools (After Effects, Premiere Pro, Photoshop, Figma) and the soft skills that decide whether good work lands.
 
-### Under the hood
+### Résumé
 
-- 🖤 **Monochrome by design.** Pure black, hairline borders, Inter at tight tracking, and one green accent reserved for anything live.
-- 🧭 **One page, seven sections.** Work, Security, Toolbox, Craft, About, Ask and Contact, with the nav tracking where you are.
-- ♿ **Accessible.** Semantic HTML, ARIA tabs with arrow-key navigation, visible focus rings, a native `<dialog>` for case studies, and full `prefers-reduced-motion` support.
-- 📱 **Responsive** from wide desktops down to 360px phones, with safe-area support for notched screens.
-- ⚡ **Zero dependencies.** No framework, no build step, no npm. One file, loads instantly.
-- 🔋 **Efficient.** The canvas pauses when it scrolls off-screen.
+`#/resume` is a résumé page rendered from the same data as the site, with **Download PDF** (`Aman-Goswami-Resume.pdf`) and **Print**. Printing any page of the site prints the résumé.
 
-## 🧠 How the blockchain demo works
+## 🧭 Honesty rules the site follows
 
-```
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│ Block #0     │     │ Block #1     │     │ Block #2     │
-│ data         │     │ data         │     │ data         │
-│ nonce        │     │ nonce        │     │ nonce        │
-│ prev: 000…0  │◄────│ prev: hash#0 │◄────│ prev: hash#1 │
-│ hash: 000a…  │     │ hash: 000f…  │     │ hash: 0003…  │
-└──────────────┘     └──────────────┘     └──────────────┘
-```
-
-Each block's hash is `SHA-256(index + prev + data + nonce)`. **Mining** means increasing the nonce until the hash starts with the required number of zeros. Changing any block's data changes its hash, which breaks the `prev` link in every block after it. That's why tampering is easy to detect.
-
-SHA-256 is implemented from scratch using `Int32Array` and bitwise operations, and it's verified against Node's `crypto` module. It needs no Web Crypto API, so it even works when opened as a local file.
+- Projects are tagged **Real build** or **Lab build**, and in-progress work says so.
+- No invented numbers: pings are measured live, GitHub numbers come from GitHub, progress bars are stages.
+- The assistant says it is keyword matching, not a language model.
+- three.js is the one library, loaded from cdnjs with an integrity hash. If it can't load (offline), hand-written 2D canvas versions take over.
 
 ## 🗂️ Project structure
 
 ```
 .
-├── index.html   # the entire site: HTML, CSS and JS
+├── index.html                 # the whole site: HTML, CSS, JS, inlined screenshots and icons
+├── Aman-Goswami-Resume.pdf    # generated from the #/resume page
 └── README.md
 ```
 
-Inside `index.html`:
+Inside `index.html`, the JS objects worth knowing:
 
-```
-<style>     design tokens (:root) → layout → components → responsive → reduced motion
-<body>      nav · hero · proof · work · security · toolbox · craft · about · ask · contact
-<script>    scroll reveal · 3D field · 3D topology · dot portrait · projects
-            + certs · assistant · command palette · the four tools · copy buttons
-```
+| Object | What it holds |
+|---|---|
+| `projects` | Every project: `status`, `url`, `blurb`, `bullets`, `stack`, `problem`, `built`, `learned`, and `cv` (the résumé line) |
+| `SHOTS` | The greyscale screenshots of each live site (base64 JPEG) |
+| `SKILLS` | Skills by area, each `[name, icon or glyph, solid / working / learning]` |
+| `CERTS` | CCNA and Security+ domains with official weightings and status |
+| `BENCH` | The *Building now* jobs and their stages |
+| `KB` | The assistant's knowledge: keywords → answer |
+| `TERM` | Terminal commands |
+| `CMD` | Command palette entries |
+| `ICONS` | Brand marks from Simple Icons (CC0) |
 
 ## 🚀 Run locally
 
-No setup needed. Just open the file:
+No setup. Open `index.html` in a browser, or serve the folder:
 
 ```bash
-git clone https://github.com/<your-github-username>/<repo-name>.git
-cd <repo-name>
-# open index.html in your browser, or serve it:
-npx serve .        # or: python -m http.server 8000
+python3 -m http.server 8000
 ```
+
+Everything works offline except the live pings, GitHub data and three.js, which all fail gracefully.
 
 ## 🌐 Deploy to GitHub Pages
 
-1. Rename `aman-goswami-portfolio.html` to **`index.html`** and push it to a public repo.
-2. Go to **Settings → Pages**.
-3. Under *Source*, choose **Deploy from a branch**, then pick `main` and `/ (root)`.
-4. Your site goes live at `https://<username>.github.io/<repo-name>/` within a minute or two.
-
-> Want `https://<username>.github.io/` with no repo name? Name the repo **`<username>.github.io`**.
-
-Netlify and Vercel work too: drag the folder in and it's live.
+1. Push `index.html`, `Aman-Goswami-Resume.pdf` and this README to a public repo.
+2. **Settings → Pages → Deploy from a branch**, pick `main` and `/ (root)`.
+3. It goes live at `https://<username>.github.io/<repo>/` in a minute or two. Vercel, Netlify and Cloudflare Pages work too: drag the folder in.
 
 ## 🛠️ Customise
 
 | To change… | Edit… |
 |---|---|
-| Colours | CSS variables in `:root` (`--bg`, `--line`, `--dim`, `--live`, …) |
-| Assistant answers | The `KB` array in `<script>`: keywords plus the answer to give |
-| Command palette | The `CMD` array in `<script>` |
-| Photo | The `<img id="src">` data URL at the bottom of the file |
-| Fonts | The Google Fonts `<link>` and `--display` / `--body` / `--mono` |
-| Projects | The `projects` array in `<script>`. Each entry has `title`, `blurb`, `stack`, `problem`, `built`, `learned`. Use `size: 'feature' \| 'wide' \| 'full' \| ''` to control the card's width. |
-| Skills & levels | The `.skill-list` items in the Skills section (`solid`, `working`, `learning`) |
-| Cert progress | The `CERTS` object in `<script>`. Set each domain's status to `'done'`, `'now'` or `''` |
-| Rotating roles | The `roles` array |
-| LinkedIn | Replace the "Profile coming soon" card in `#contact` with an `<a href="…">` card |
+| Colours | CSS variables in `:root`. The palette is black, white and grey; `--ok` and `--bad` are kept only for live/down and permit/deny. |
+| Fonts | The Google Fonts `<link>` and `--sans` (Geist), `--mono` (Geist Mono), `--serif` (Instrument Serif) |
+| Projects | The `projects` array. New screenshot: add it to `SHOTS` under the same id and set `shot:1`. |
+| Live pings | The `SITES` list in the live latency block |
+| GitHub user | `U` in the GitHub block, plus the nav and contact links |
+| Progress | `BENCH` (stage names and the current index `at`) and `CERTS` (`'done'`, `'now'` or `''`) |
+| Assistant | `KB` and the suggested questions in `SUGG` |
+| Résumé | `renderResume()`. Regenerate the PDF by printing `#/resume` to PDF (A4). |
+| LinkedIn | Replace the *Profile coming soon* card in `#contact` |
 
 ## 🧰 Built with
 
-**HTML5** · **CSS3** (Grid, custom properties, `backdrop-filter`, `color-mix()`, keyframes) · **Vanilla JavaScript** (Canvas API, `IntersectionObserver`, `<dialog>`, Clipboard API) · Fonts: [Unbounded](https://fonts.google.com/specimen/Unbounded), [Figtree](https://fonts.google.com/specimen/Figtree), [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
+**HTML5** · **CSS3** (grid, custom properties, `@property`, `backdrop-filter`, `:has()`, print styles) · **Vanilla JavaScript** (Canvas, `IntersectionObserver`, `<dialog>`, Clipboard, `fetch`) · **three.js r128** for the globe and the campus lab · Fonts: [Geist](https://fonts.google.com/specimen/Geist), [Geist Mono](https://fonts.google.com/specimen/Geist+Mono), [Instrument Serif](https://fonts.google.com/specimen/Instrument+Serif) · Icons: [Simple Icons](https://simpleicons.org) (CC0)
 
 ## 📬 Contact
 
@@ -147,18 +132,17 @@ Netlify and Vercel work too: drag the folder in and it's live.
 | 📧 Personal | [amanopp0690@gmail.com](mailto:amanopp0690@gmail.com) |
 | 🎓 University | [aman.24bce7313@vitapstudent.ac.in](mailto:aman.24bce7313@vitapstudent.ac.in) |
 | 📱 Phone | [+91 80119 24517](tel:+918011924517) |
+| 🐙 GitHub | [@ErinOP-gltich](https://github.com/ErinOP-gltich) |
 | 💼 LinkedIn | *Coming soon* |
 
 ## 📄 License
 
-The code is free to use as inspiration under the [MIT License](https://opensource.org/licenses/MIT). The personal content (name, projects, contact details) belongs to Aman Goswami, so please don't reuse it as your own.
+The code is free to use as inspiration under the [MIT License](https://opensource.org/licenses/MIT). The personal content (name, projects, screenshots, contact details) belongs to Aman Goswami, so please don't reuse it as your own. Design inspired by [partharsid.dev](https://partharsid.dev).
 
 <div align="center">
 
 ---
 
 Made with ☕, packet captures and too many keyframes by **Aman Goswami**
-
-⭐ If you like the site, a star on the repo is appreciated!
 
 </div>
