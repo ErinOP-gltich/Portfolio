@@ -1,0 +1,6 @@
+{
+  // Static site on Cloudflare Workers. Redeploy with: npx wrangler deploy
+  "name": "aman-goswami",
+  "compatibility_date": "2026-10-06",
+  "assets": { "directory": "." }
+}

@@ -1,0 +1,11 @@
+# only index.html and the résumé PDF are public
+.git
+.claude
+.assetsignore
+wrangler.jsonc
+README.md
+README1.md
+LICENSE
+CLAUDE.md
+aman-goswami-portfolio_1.html
+.wrangler
