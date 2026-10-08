@@ -109,7 +109,7 @@ html.has-cursor:has(dialog[open]) *{cursor:auto !important}
 
 /* two-way mode switch */
 html[data-mode="tech"] [data-for="creative"], html[data-mode="creative"] [data-for="tech"]{display:none}
-.mode-pill{position:relative; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); border:1px solid var(--line); border-radius:999px; padding:3px; background:var(--panel)}
+.mode-pill{position:relative; flex:none; display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); border-radius:999px; padding:3px; background:var(--panel)}
 .mode-pill::before{content:""; position:absolute; top:3px; bottom:3px; left:3px; width:calc(50% - 3px); border-radius:999px; background:#fff; transition:transform .5s var(--ease)}
 html[data-mode="creative"] .mode-pill::before{transform:translateX(100%)}
 .mode-pill button{min-width:72px; white-space:nowrap; position:relative; border:0; background:none; color:var(--dim); font:500 .8rem var(--sans); padding:6px 12px; border-radius:999px; cursor:pointer; transition:color .4s}
