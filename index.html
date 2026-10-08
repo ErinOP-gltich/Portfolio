@@ -6,7 +6,7 @@
 <title>Aman Goswami · Front-end and network security</title>
 <meta name="description" content="Aman Goswami builds for the browser and studies what breaks it. 3rd-year CSE at VIT-AP. Front-end, network security (CCNA + Security+) and blockchain basics.">
 <meta name="theme-color" content="#000000">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='8' y1='4' x2='56' y2='60' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='%23FFFFFF'/><stop offset='1' stop-color='%235C5C66'/></linearGradient></defs><path d='M32 4 55 12.5V30c0 14.5-9.6 24.4-23 30C18.6 54.4 9 44.5 9 30V12.5Z' fill='%2306060A' stroke='url(%23g)' stroke-width='3.5' stroke-linejoin='round'/><g fill='none' stroke-width='4.2' stroke-linecap='round' stroke-linejoin='round'><g stroke='%23B4B4BE' transform='translate(-1.2 .5)'><path d='M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5'/></g><g stroke='%2356565F' transform='translate(1.2 -.5)'><path d='M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5'/></g><path stroke='%23fff' d='M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5'/></g></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='29.5' fill='none' stroke='%23FFFFFF' stroke-width='1.2' stroke-dasharray='1 4'/><path d='M32 5 53 12.8V30c0 13.5-8.9 22.8-21 28-12.1-5.2-21-14.5-21-28V12.8Z' fill='%23050807' stroke='%23E8F0EA' stroke-width='1.7'/><path d='M14 32h5m26 0h5M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5' fill='none' stroke='%23FFFFFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/><path d='M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/><circle cx='32' cy='10.2' r='1.8' fill='%23FFFFFF'/></svg>"><defs><linearGradient id='g' x1='8' y1='4' x2='56' y2='60' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='%23FFFFFF'/><stop offset='1' stop-color='%235C5C66'/></linearGradient></defs><path d='M32 4 55 12.5V30c0 14.5-9.6 24.4-23 30C18.6 54.4 9 44.5 9 30V12.5Z' fill='%2306060A' stroke='url(%23g)' stroke-width='3.5' stroke-linejoin='round'/><g fill='none' stroke-width='4.2' stroke-linecap='round' stroke-linejoin='round'><g stroke='%23B4B4BE' transform='translate(-1.2 .5)'><path d='M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5'/></g><g stroke='%2356565F' transform='translate(1.2 -.5)'><path d='M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5'/></g><path stroke='%23fff' d='M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5'/></g></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -59,11 +59,15 @@ body::before{content:""; position:fixed; inset:0; z-index:0; pointer-events:none
 .grain{position:fixed; inset:-50%; width:200%; height:200%; z-index:150; pointer-events:none; opacity:.045; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); animation:grain .9s steps(4) infinite}
 @keyframes grain{25%{transform:translate(-4%,3%)}50%{transform:translate(3%,-5%)}75%{transform:translate(-2%,4%)}}
 .progress{position:fixed; top:0; left:0; right:0; height:2px; z-index:70; background:var(--grad); transform-origin:0 50%; transform:scaleX(var(--p,0))}
-.cursor{position:fixed; left:0; top:0; z-index:200; width:12px; height:12px; margin:-6px 0 0 -6px; border-radius:50%; background:#fff; mix-blend-mode:difference; pointer-events:none; opacity:0; display:grid; place-items:center; transition:width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease), opacity .3s}
-.cursor.on{opacity:1}
-.cursor.big{width:54px; height:54px; margin:-27px 0 0 -27px}
-.cursor.lbl{width:64px; height:64px; margin:-32px 0 0 -32px; mix-blend-mode:normal}
-.cursor span{font:600 .56rem var(--mono); letter-spacing:.12em; text-transform:uppercase; color:#000}
+.cur-dot, .cur-lock, .cur-tag{position:fixed; left:0; top:0; z-index:200; pointer-events:none; opacity:0; transition:opacity .25s}
+html.cur-on .cur-dot, html.cur-on .cur-lock{opacity:1}
+.cur-dot{width:6px; height:6px; margin:-3px 0 0 -3px; border-radius:50%; background:#fff; mix-blend-mode:difference; transition:opacity .25s, width .2s, height .2s, margin .2s, border-radius .2s}
+.cur-dot.text{width:2px; height:22px; margin:-11px 0 0 -1px; border-radius:1px}
+.cur-lock{--c:7px; --t:1.5px; width:26px; height:26px; mix-blend-mode:difference; background:linear-gradient(#fff,#fff) left top/var(--c) var(--t), linear-gradient(#fff,#fff) left top/var(--t) var(--c), linear-gradient(#fff,#fff) right top/var(--c) var(--t), linear-gradient(#fff,#fff) right top/var(--t) var(--c), linear-gradient(#fff,#fff) left bottom/var(--c) var(--t), linear-gradient(#fff,#fff) left bottom/var(--t) var(--c), linear-gradient(#fff,#fff) right bottom/var(--c) var(--t), linear-gradient(#fff,#fff) right bottom/var(--t) var(--c); background-repeat:no-repeat}
+.cur-lock.on-el{--c:11px}
+html.cur-on .cur-lock.off{opacity:0}
+.cur-tag{font:600 .6rem var(--mono); letter-spacing:.14em; text-transform:uppercase; color:#000; background:#fff; padding:5px 9px; border-radius:6px; white-space:nowrap}
+html.cur-on .cur-tag.show{opacity:1}
 html.has-cursor, html.has-cursor *{cursor:none !important}
 html.has-cursor :is(input, textarea, select, [contenteditable]){cursor:text !important}
 html.has-cursor:has(dialog[open]) *{cursor:auto !important}
@@ -89,7 +93,9 @@ html.has-cursor:has(dialog[open]) *{cursor:auto !important}
 .logo{width:32px; height:34px; flex:none; filter:drop-shadow(0 0 10px rgba(255,255,255,.16))}
 .brand .logo{animation:glitch 4.5s steps(1) infinite}
 .brand:hover .logo{animation:glitch .5s steps(1) infinite}
-@keyframes glitch{0%,86%,100%{--gl:1} 88%{--gl:4} 90%{--gl:-3} 92%{--gl:5} 94%{--gl:.4} 96%{--gl:2.5}}
+@keyframes glitch{0%,82%,100%{--gl:1} 84%{--gl:5} 86%{--gl:-4} 88%{--gl:6} 90%{--gl:.3} 92%{--gl:3}}
+@keyframes logo-orbit{to{transform:rotate(360deg)}}
+@keyframes logo-pulse{to{opacity:.25; r:1}}
 .brand span{white-space:nowrap}
 .nav-links{display:flex; gap:2px; justify-self:center}
 .nav-act{grid-column:3; justify-self:end; display:flex; align-items:center; gap:8px}
@@ -137,13 +143,15 @@ html[data-mode="creative"] .mode-pill::before{transform:translateX(100%)}
 .hero h1{text-shadow:0 2px 30px #000}
 .hero .btn.ghost{background:rgba(0,0,0,.55); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px)}
 #globe{position:absolute; inset:0; width:100%; height:100%; z-index:0; opacity:0; transition:opacity 1.6s var(--ease); touch-action:pan-y; cursor:grab}
+#matrix{position:absolute; inset:0; z-index:1; width:100%; height:100%; opacity:.42; pointer-events:none; mix-blend-mode:screen; mask-image:radial-gradient(ellipse 76% 78% at 50% 48%, rgba(0,0,0,.3) 0%, rgba(0,0,0,.58) 48%, #000 100%)}
 #globe.on{opacity:1}
 #globe:active{cursor:grabbing}
 #field{position:absolute; inset:0; width:100%; height:100%; z-index:0; opacity:.95; display:none}
 .hero-in{position:relative; z-index:2; display:grid; justify-items:center; align-content:start; align-self:flex-start; pointer-events:none; will-change:transform, opacity}
 .hero-in a, .hero-in button{pointer-events:auto}
 .tagpill{margin-bottom:28px}
-.hero-copy, .typer{text-shadow:0 1px 18px #000, 0 0 2px #000}
+.hero-copy, .typer, .hero-lede{text-shadow:0 1px 18px #000, 0 0 2px #000}
+.hero-lede{max-width:46ch; margin:12px auto 0; color:#C4C4CC; font-size:clamp(.98rem,1.35vw,1.1rem); line-height:1.65; text-wrap:balance}
 .typer{margin-top:22px; font:400 clamp(.88rem,1.3vw,1.02rem) var(--mono); color:var(--dim); min-height:1.7em}
 .typer .p{color:var(--dimmer)}
 .hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:220px; background:linear-gradient(transparent, #000); pointer-events:none; z-index:1}
@@ -541,7 +549,26 @@ textarea.code:focus{outline:none; border-color:#fff}
 @keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
 
 /* ---------- résumé ---------- */
-.resume-view{position:relative; z-index:1; padding:110px 0 90px; min-height:100svh}
+.resume-view, .notes-view{position:relative; z-index:1; padding:110px 0 90px; min-height:100svh}
+.notes-wrap{max-width:860px}
+.notes-wrap > h1{font:400 clamp(3rem,8vw,5.4rem)/1 var(--serif); letter-spacing:-.01em; margin-top:28px}
+.notes-wrap > .lede{margin-top:16px}
+.notes-list{list-style:none; margin:40px 0 0; padding:0; border-top:1px solid var(--line)}
+.notes-list a{display:grid; gap:10px; padding:30px 0; border-bottom:1px solid var(--line); transition:padding .45s var(--ease)}
+.notes-list a:hover{padding-left:14px}
+.nmeta{display:flex; flex-wrap:wrap; gap:6px 14px; font:400 .74rem var(--mono); letter-spacing:.04em; color:var(--dimmer)}
+.notes-list h2{font-size:clamp(1.4rem,2.6vw,1.9rem); letter-spacing:-.035em; line-height:1.15}
+.notes-list p{color:var(--dim)}
+.notes-list .go{font-size:.88rem; color:var(--txt)}
+.note h1{font-size:clamp(2.2rem,5vw,3.5rem); letter-spacing:-.045em; line-height:1.05; margin:14px 0 32px}
+.prose{max-width:68ch; color:#c9c9d1; font-size:1.06rem; line-height:1.75}
+.prose p, .prose ul, .prose pre{margin:0 0 20px}
+.prose h2{font-size:1.35rem; letter-spacing:-.03em; line-height:1.25; margin:38px 0 12px; color:var(--txt)}
+.prose code{font:500 .86em var(--mono); background:var(--panel-2); border:1px solid var(--line); border-radius:6px; padding:1px 6px}
+.prose pre{background:#0A0A0D; border:1px solid var(--line); border-radius:var(--r); padding:16px 18px; overflow:auto}
+.prose pre code{background:none; border:0; padding:0; font-size:.84rem; line-height:1.65; color:var(--txt)}
+.prose ul{padding-left:20px} .prose li{margin-bottom:6px}
+.note-next{margin-top:50px; padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
 .rs-wrap{max-width:880px}
 .rs-top{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:20px}
 .rs-top .dim{margin-left:auto; font-size:.9rem}
@@ -684,25 +711,30 @@ dialog[open]{animation:pop .3s var(--ease)}
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="logo" viewBox="0 0 64 64">
-    <defs><linearGradient id="lg" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#5C5C66"/></linearGradient></defs>
-    <path d="M32 4 55 12.5V30c0 14.5-9.6 24.4-23 30C18.6 54.4 9 44.5 9 30V12.5Z" fill="#06060A" stroke="url(#lg)" stroke-width="3.5" stroke-linejoin="round"/>
-    <g fill="none" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="#B4B4BE" d="M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5" style="mix-blend-mode:screen; transform:translate(calc(var(--gl,1) * -1.2px), calc(var(--gl,1) * .5px))"/>
-      <path stroke="#56565F" d="M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5" style="mix-blend-mode:screen; transform:translate(calc(var(--gl,1) * 1.2px), calc(var(--gl,1) * -.5px))"/>
+    <path class="orbit" d="M32 2.5a29.5 29.5 0 1 1-20.86 8.64M32 2.5v5M61.5 32h-5" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="1 4" style="transform-box:fill-box;transform-origin:center;animation:logo-orbit 14s linear infinite"/>
+    <path d="M32 5 53 12.8V30c0 13.5-8.9 22.8-21 28-12.1-5.2-21-14.5-21-28V12.8Z" fill="#050807" stroke="#E8F0EA" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M16 16.5 32 10l16 6.5M14 47l9-4 9 4 9-4 9 4" fill="none" stroke="#fff" stroke-width=".8" opacity=".75"/>
+    <path d="M14 32h5m26 0h5M20 45l-4 3m28-3 4 3" fill="none" stroke="#fff" stroke-width="1"/>
+    <g fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="#fff" d="M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5" style="mix-blend-mode:screen;transform:translate(calc(var(--gl,1) * -1.6px),calc(var(--gl,1) * .6px))"/>
+      <path stroke="#7C8C82" d="M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5" style="mix-blend-mode:screen;transform:translate(calc(var(--gl,1) * 1.2px),calc(var(--gl,1) * -.5px))"/>
       <path stroke="#fff" d="M15.5 38 22.5 18l7 20M17.9 31.5h9.2M46.5 22A8.5 8.5 0 1 0 49 28h-6.5"/>
     </g>
+    <circle cx="32" cy="10.2" r="1.8" fill="#fff" style="animation:logo-pulse 1.5s ease-in-out infinite alternate"/>
+    <circle cx="14" cy="32" r="1.5" fill="#fff"/><circle cx="50" cy="32" r="1.5" fill="#fff"/>
+    <path d="M27 51h10" stroke="#fff" stroke-width="1" stroke-linecap="round"/>
   </symbol>
 </svg>
 
 <div class="grain" aria-hidden="true"></div>
 <div class="progress" aria-hidden="true"></div>
-<div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+<div class="cur-lock" id="curLock" aria-hidden="true"></div><div class="cur-dot" id="curDot" aria-hidden="true"></div><div class="cur-tag" id="curTag" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="Aman Goswami, back to top"><svg class="logo" aria-hidden="true"><use href="#logo"/></svg><span>Aman Goswami</span></a>
     <nav class="nav-links" aria-label="Sections">
-      <a href="#work" data-for="tech">Work</a><a href="#building" data-for="tech">Now</a><a href="#skills" data-for="tech">Skills</a><a href="#security" data-for="tech">Lab</a><a href="#live" data-for="tech">Live</a><a href="#github" data-for="tech">GitHub</a><a href="#craft" data-for="creative">Craft</a><a href="#about" data-for="creative">About</a><a href="#/resume">Résumé</a>
+      <a href="#work" data-for="tech">Work</a><a href="#building" data-for="tech">Now</a><a href="#skills" data-for="tech">Skills</a><a href="#security" data-for="tech">Lab</a><a href="#live" data-for="tech">Live</a><a href="#github" data-for="tech">GitHub</a><a href="#craft" data-for="creative">Craft</a><a href="#about" data-for="creative">About</a><a href="#/notes">Notes</a><a href="#/resume">Résumé</a>
     </nav>
     <div class="nav-act">
       <div class="mode-pill" role="group" aria-label="Show technical or creative work">
@@ -722,6 +754,7 @@ dialog[open]{animation:pop .3s var(--ease)}
 <div class="hero" id="hero">
   <canvas id="field" aria-hidden="true"></canvas>
   <canvas id="globe" role="img" aria-label="Aman’s shield logo drawn in thousands of particles inside a tunnel of code. Move the cursor to scatter it; it morphs into a network and a cube."></canvas>
+  <canvas id="matrix" aria-hidden="true"></canvas>
   <div class="wrap hero-in" id="heroIn">
     <a class="tagpill" href="#work"><i class="live-dot" aria-hidden="true"></i> <b>Open to internships</b> · 3rd-year CSE, VIT-AP</a>
     <h1>
@@ -729,9 +762,10 @@ dialog[open]{animation:pop .3s var(--ease)}
       <span class="mask"><span>and study what <em class="s gt">breaks</em> it.</span></span>
     </h1>
     <p class="typer"><span class="p" aria-hidden="true">~$</span> <span id="typed">front-end developer</span><span class="caret" aria-hidden="true"></span></p>
+    <p class="hero-lede">Useful websites and tools for research labs, founders, and the people who rely on them.</p>
     <div class="hero-actions">
-      <a class="btn solid" href="#work">See the work <span aria-hidden="true">↓</span></a>
-      <a class="btn ghost" href="#contact">Say hello</a>
+      <a class="btn solid" href="#work" data-cursor="Explore">See the work <span aria-hidden="true">↓</span></a>
+      <a class="btn ghost" href="#contact" data-cursor="Hello">Say hello</a>
     </div>
   </div>
 </div>
@@ -1036,12 +1070,16 @@ dialog[open]{animation:pop .3s var(--ease)}
     <p class="reach rv d2"><button type="button" class="link" data-copy="amanopp0690@gmail.com">Or copy amanopp0690@gmail.com</button><a href="tel:+918011924517">+91 80119 24517</a><a href="mailto:aman.24bce7313@vitapstudent.ac.in">University email</a><a href="https://github.com/ErinOP-gltich" target="_blank" rel="noopener">GitHub</a><span>LinkedIn soon</span></p>
     <footer class="foot">
       <span>© 2026 Aman Goswami</span>
-      <span><a href="#/resume">Résumé</a> · <a href="https://github.com/ErinOP-gltich" target="_blank" rel="noopener">GitHub</a> · <a href="#live">Status</a></span>
+      <span><a href="#/notes">Notes</a> · <a href="#/resume">Résumé</a> · <a href="https://github.com/ErinOP-gltich" target="_blank" rel="noopener">GitHub</a> · <a href="#live">Status</a></span>
       <span>Press <kbd class="ck">Ctrl K</kbd> to jump anywhere, or <kbd>`</kbd> for a terminal.</span>
     </footer>
   </div>
 </section>
 </main>
+
+<div class="notes-view" id="notesView" hidden>
+  <div class="wrap notes-wrap" id="notesBody"></div>
+</div>
 
 <div class="resume-view" id="resumeView" hidden>
   <div class="wrap rs-wrap">
@@ -1090,7 +1128,7 @@ const $ = s => document.querySelector(s);
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches, fine = matchMedia('(pointer:fine)').matches;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 history.scrollRestoration = 'manual';                 // a reload always opens on the hero, not wherever you were
-if (location.hash && location.hash !== '#/resume') history.replaceState(null, '', location.pathname + location.search);
+if (location.hash && !location.hash.startsWith('#/')) history.replaceState(null, '', location.pathname + location.search);
 
 /* ---------- scroll reveal + nav ---------- */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.14, rootMargin:'0px 0px -8% 0px'});
@@ -1105,6 +1143,40 @@ addEventListener('scroll', () => {
 }, {passive:true});
 const CK = /Mac|iP(hone|ad)/.test(navigator.userAgent) ? '⌘K' : 'Ctrl K';
 $('#cmdOpen').textContent = CK; document.querySelectorAll('.ck').forEach(k => k.textContent = CK);
+
+/* ---------- low-contrast Matrix rain behind the hero scene ---------- */
+(() => {
+  const cv = $('#matrix'), ctx = cv.getContext('2d');
+  let w = 0, h = 0, dpr = 1, cols = 0, drops = [], run = true, raf = 0, last = 0;
+  const size = 16, chars = '01アイウエオカキクケコサシスセソタチツテト<>/{}[]';
+  const resize = () => {
+    const r = cv.getBoundingClientRect(); w = r.width; h = r.height; dpr = Math.min(devicePixelRatio || 1, 2);
+    if (!w || !h) return;
+    cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.font = '13px "Geist Mono", monospace'; cols = Math.ceil(w / size);
+    drops = Array.from({length:cols}, () => ({y:Math.random() * h / size, speed:.35 + Math.random() * .9, tail:7 + Math.random() * 13|0}));
+    draw(0, true);
+  };
+  const draw = (now, still = false) => {
+    if (!w || !h) return;
+    ctx.clearRect(0,0,w,h);
+    drops.forEach((d, x) => {
+      for (let n = d.tail; n >= 0; n--){
+        const y = (d.y - n) * size;
+        if (y < 0 || y > h) continue;
+        const a = n === 0 ? .95 : .08 + .34 * (1 - n / d.tail);
+        ctx.fillStyle = n === 0 && x % 4 === 0 ? `rgba(255,255,255,${a})` : `rgba(225,230,232,${a})`;
+        ctx.fillText(chars[Math.random() * chars.length | 0], x * size, y);
+      }
+      if (!still) { d.y += d.speed * (now - (last || now) || 16) / 16; if ((d.y - d.tail) * size > h && Math.random() > .975) d.y = 0; }
+    });
+    last = now;
+  };
+  const frame = now => { if (!run || reduce) return; draw(now); raf = requestAnimationFrame(frame); };
+  new ResizeObserver(resize).observe(cv);
+  new IntersectionObserver(([e]) => { const was = run; run = e.isIntersecting; if (run && !was && !reduce) raf = requestAnimationFrame(frame); else if (!run && raf) cancelAnimationFrame(raf); }).observe($('#hero'));
+  resize(); if (!reduce) raf = requestAnimationFrame(frame);
+})();
 
 /* ---------- smooth wheel scrolling (lerped, Lenis-style). Touch, keys and reduced motion stay native ---------- */
 const smooth = (() => {
@@ -1128,14 +1200,23 @@ const smooth = (() => {
 
 /* ---------- cursor, spotlight, magnetic buttons, tilting cards ---------- */
 if (fine && !reduce){
-  const c = $('#cursor'), label = c.firstElementChild;
-  let x = -99, y = -99, cx = x, cy = y, raf = 0, tl = null;
-  const follow = () => { cx += (x - cx) * .22; cy += (y - cy) * .22; c.style.transform = `translate(${cx}px,${cy}px)`; raf = Math.hypot(x - cx, y - cy) > .3 ? requestAnimationFrame(follow) : 0; };
+  const dot = $('#curDot'), lock = $('#curLock'), tag = $('#curTag');
+  let x = -99, y = -99, bx = x, by = y, bw = 26, bh = 26, raf = 0, tl = null, aim = null, down = false;
+  const loop = () => {                                // brackets glide to the pointer, or lock around the thing under it
+    let tx = x, ty = y, tw = 26, th = 26;
+    if (aim && aim.isConnected){ const r = aim.getBoundingClientRect(); if (r.width){ tx = r.left + r.width / 2; ty = r.top + r.height / 2; tw = r.width + 14; th = r.height + 12; } }
+    const k = down ? .86 : 1;
+    bx += (tx - bx) * .3; by += (ty - by) * .3; bw += (tw * k - bw) * .25; bh += (th * k - bh) * .25;
+    lock.style.cssText = `width:${bw}px; height:${bh}px; transform:translate3d(${bx - bw / 2}px, ${by - bh / 2}px, 0)`;
+    raf = aim || Math.abs(tx - bx) + Math.abs(ty - by) + Math.abs(tw * k - bw) + Math.abs(th * k - bh) > .4 ? requestAnimationFrame(loop) : 0;
+  };
+  const kick = () => { if (!raf) raf = requestAnimationFrame(loop); };
   root.classList.add('has-cursor');
   addEventListener('pointermove', e => {
-    x = e.clientX; y = e.clientY; c.classList.add('on');
+    x = e.clientX; y = e.clientY; root.classList.add('cur-on');
+    dot.style.transform = `translate3d(${x}px, ${y}px, 0)`; tag.style.transform = `translate3d(${x + 16}px, ${y + 16}px, 0)`;
     root.style.setProperty('--mx', x + 'px'); root.style.setProperty('--my', y + 'px');
-    if (!raf) raf = requestAnimationFrame(follow);
+    kick();
     const t = e.target.closest?.('.pj, .mini-card, .b');      // 3D tilt with a glare that follows the pointer
     if (tl && tl !== t) tl.style.transform = '';
     if ((tl = t)){
@@ -1144,11 +1225,18 @@ if (fine && !reduce){
       t.style.setProperty('--gx', (px + .5) * 100 + '%'); t.style.setProperty('--gy', (py + .5) * 100 + '%');
     }
   }, {passive:true});
-  document.addEventListener('pointerout', e => { if (!e.relatedTarget) c.classList.remove('on'); });
+  addEventListener('pointerdown', () => { down = true; kick(); }, {passive:true});
+  addEventListener('pointerup', () => { down = false; kick(); }, {passive:true});
+  addEventListener('blur', () => root.classList.remove('cur-on'));
+  document.addEventListener('pointerout', e => { if (!e.relatedTarget) root.classList.remove('cur-on'); });
   document.addEventListener('pointerover', e => {
-    const t = e.target.closest('a, button, label, select, summary, [data-cursor], .pj, .mini-card, #topo, #lab3d, .orb, .tracks');
-    const txt = t ? t.dataset.cursor || (t.matches('.pj, .mini-card') ? 'Open' : t.matches('#topo, #lab3d, .orb') ? 'Drag' : '') : '';
-    c.classList.toggle('big', !!t); c.classList.toggle('lbl', !!txt); label.textContent = txt;
+    const el = e.target, field = el.closest('input, textarea, [contenteditable]');
+    const ctl = field || el.closest('a, button, select, summary, [data-cursor]'), card = !ctl && el.closest('.pj'), drag = el.closest('#topo, #lab3d, .orb, .tracks');
+    aim = ctl || card || null;
+    const txt = ctl?.dataset.cursor || (ctl?.matches('.mini-card') || card ? 'Open' : drag ? 'Drag' : '');
+    dot.classList.toggle('text', !!field); lock.classList.toggle('on-el', !!aim); lock.classList.toggle('off', !!drag && !aim);
+    tag.textContent = txt; tag.classList.toggle('show', !!txt);
+    kick();
   });
   document.addEventListener('pointermove', e => {
     const b = e.target.closest?.('.btn, .ib'); if (!b) return;
@@ -1974,13 +2062,153 @@ function renderResume(){
   <section><h2>Skills</h2><div class="g2">${Object.entries(SKILLS).map(([a, l]) => `<b>${a}</b><span>${l.filter(x => x[2] !== 'learning').map(x => x[0]).join(', ')}${l.some(x => x[2] === 'learning') ? '. Learning: ' + l.filter(x => x[2] === 'learning').map(x => x[0]).join(', ') : ''}</span>`).join('')}<b>Design and video</b><span>Figma, After Effects, Premiere Pro, Photoshop</span></div></section>`;
 }
 renderResume();
-let routed = false;
+/* ---------- notes (#/notes): short write-ups grounded in the projects on this page ---------- */
+const NOTES = [
+ {
+  "slug": "pcbl-lab-website",
+  "title": "A lab website the lab can run without me",
+  "tags": [
+   "Web",
+   "Supabase",
+   "Security"
+  ],
+  "blurb": "PCBL needed a site its researchers could update themselves. The answer was two websites, one database, and rules that live in the database.",
+  "body": "<p>The Phytochemistry & Computational Biology Laboratory had no website, and nobody there writes code. So the brief wasn’t “build a site”, it was “build a site they can keep alive without me”.</p>\n<h2>Two websites, one database</h2>\n<p>The public site only ever reads. A separate console, which only opens with an admin login, is where the lab posts papers and projects and edits every section and every line of text on the public site. Both are plain HTML, CSS and JavaScript on Cloudflare Pages, and both talk to the same Supabase project.</p>\n<h2>Paste a DOI, get a paper</h2>\n<p>Posting a paper starts with its DOI. Auto-fill asks Crossref for the title, authors, journal, year and citation count, detects the research theme, and lets the lab correct anything before it goes live. Every published paper can be edited in the same composer or removed.</p>\n<h2>The database decides, not the browser</h2>\n<p>Row Level Security means anyone can read the site’s content, but only signed-in accounts on the admin list can write, read the history, or upload and delete images. Even a perfect copy of the console’s code can’t change anything without one of those accounts.</p>\n<p>Both sites also send a strict Content-Security-Policy: scripts only from the site itself, no inline scripts, no third-party JavaScript. The console talks to Supabase with plain <code>fetch</code> instead of loading a client library from a CDN, refuses to be framed, and is hidden from search engines.</p>\n<h2>Nothing gets lost</h2>\n<p>Every save goes into a revision history, and the dashboard can download a full backup and restore it. Free Supabase projects pause after about a week without activity, so a tiny Cloudflare Worker reads one row once a day. If the project ever pauses anyway, visitors still see the last content they loaded, and restoring it brings everything back.</p>\n<p>The project turned into a web-developer internship with the lab, and the biggest lesson was designing for people who will never see the code.</p>",
+  "mins": 2,
+  "date": "Oct 2026"
+ },
+ {
+  "slug": "lab-inventory",
+  "title": "Stock, loans and deadlines: the lab inventory",
+  "tags": [
+   "Web",
+   "Supabase",
+   "Notifications"
+  ],
+  "blurb": "Who has the spectrophotometer, until when, and how much ethanol is left. One sign-in page, two roles, and the database keeping everyone honest.",
+  "body": "<p>A lab lends out equipment and uses up chemicals every week. The inventory app answers three questions: what do we have, who has what and until when, and what are students asking for.</p>\n<h2>One sign-in, two roles</h2>\n<p>Everyone uses the same sign-in page and lands in the right place. Admins get the console: items out now, requests and history, the items students can borrow, the lab’s own stock, and people. Students get the borrowable items and their own loans: they can request something, which an admin approves, or log something they already took, which admins see immediately.</p>\n<h2>Some data never leaves the database</h2>\n<p>Lab stock (chemicals, equipment, glassware and consumables, with quantities, low-stock levels and expiry dates) is for admins only, and that is enforced by the database: it never returns those rows to a student, whatever the page asks for. The rules have their own test suite, alongside tests for the email logic.</p>\n<h2>Reminders that actually arrive</h2>\n<p>A notification is only useful if it reaches you when the app is closed, so the app uses Web Push. A Supabase Edge Function runs every five minutes on <code>pg_cron</code>, finds what is due, and sends push notifications signed with VAPID keys. The scheduler isn’t a signed-in user, so the function checks a shared secret of its own instead.</p>\n<p>Email (reminders, “choose your password” and “forgot password”) goes through Brevo’s free tier, with a small Google Apps Script as an alternative that sends through a Gmail account.</p>\n<h2>Small things that matter</h2>\n<ul><li>A demo mode with made-up data, so anyone can try it without touching the real database.</li><li>A local preview server that sends the same security headers as production.</li><li>Categories are free names, so each lab can organise stock its own way.</li><li>Export to PDF is just a print stylesheet and <code>window.print()</code>.</li></ul>",
+  "mins": 2,
+  "date": "Oct 2026"
+ },
+ {
+  "slug": "one-codebase-two-labs",
+  "title": "One codebase, two labs",
+  "tags": [
+   "Web",
+   "Supabase",
+   "Process"
+  ],
+  "blurb": "PCBL has a website, an admin console and an inventory app. When a second lab wanted the same, the hard part was forking it without making a mess.",
+  "body": "<p>The PCBL lab’s website, its admin console and its inventory app are plain HTML, CSS and JavaScript, with Supabase for data and logins and Cloudflare Pages for hosting. When the MCML lab wanted the same, copying the folder was the easy part. Keeping two copies honest was the real job.</p>\n<h2>Rename, rebrand, then prove it</h2>\n<p>The fork starts from a specific PCBL commit. Every identifier is renamed in one pass, PCBL to MCML across code, storage keys and globals, and then the MCML brand is applied on top. A diff against the previous MCML version should then show exactly two kinds of change: the brand, and PCBL’s new features. Anything else is a mistake to fix before it ships.</p>\n<h2>Never copy the keys</h2>\n<p>Each lab gets its own Supabase project. The one file that holds a lab’s database address and public key is never copied across; the fork starts with it blank and runs in a demo mode until its own database exists.</p>\n<h2>Rules live in the database</h2>\n<p>The inventory’s stock logic is enforced by database rules, not only by the page, because anything in the browser can be edited by whoever is using it. Those rules have their own tests, and the tests run for both labs.</p>\n<h2>Same code, different faces</h2>\n<p>Sharing code doesn’t mean sharing a look. MCML gets its own palette, type and page order, so the two sites feel like two labs, not one template with the logo swapped. When PCBL changes, the same rename-rebrand-diff routine carries the fix across.</p>",
+  "mins": 1,
+  "date": "Oct 2026"
+ },
+ {
+  "slug": "bioinfoaus-migration",
+  "title": "Moving a PHP site without breaking a single link",
+  "tags": [
+   "Node.js",
+   "Express",
+   "Migration"
+  ],
+  "blurb": "bioinfoaus.ac.in has years of pages, subdomains and links pointing at it. The plan for moving it to Node.js starts with one rule: every old address keeps working.",
+  "body": "<p>bioinfoaus.ac.in is the Bioinformatics and Computational Biology Centre’s portal at Assam University. It has grown for years in PHP and MySQL: databases, subdomains, event sites, and links to it in papers, emails and bookmarks. The rework moves it to Node.js and Express with a modern interface. This note is the plan, because the plan is most of the work.</p>\n<h2>Rule one: no broken links</h2>\n<p>Every <code>.php</code> address, including the ones with query strings, has to keep working at the same path. The new server answers the old URLs directly, so nobody’s bookmark or citation breaks on the day it switches.</p>\n<h2>Rule two: drop nothing</h2>\n<p>The audit lists every feature before any code is written: chat, SMS, mail, visitor counters, graphs and the 3D molecule viewer all come across. The existing MySQL database stays, so there is no data migration to get wrong.</p>\n<h2>Replace what browsers dropped</h2>\n<p>Parts of the old site depend on Java applets for molecules, and browsers stopped running applets years ago. Their JavaScript successors, JSmol and JSME, do the same job in the page.</p>\n<h2>Then make it feel new</h2>\n<p>Native View Transitions between pages, loading skeletons instead of blank screens, and a layout that works on a phone. Configuration moves into environment variables, so the site isn’t tied to the shared host it lives on today.</p>\n<p>The audit and a phased plan are done; porting is next. The progress bar in Building now shows where it is.</p>",
+  "mins": 1,
+  "date": "Oct 2026"
+ },
+ {
+  "slug": "nebula-pdf",
+  "title": "Nine PDF tools and zero uploads",
+  "tags": [
+   "JavaScript",
+   "Privacy",
+   "Browser"
+  ],
+  "blurb": "Every free PDF site wants your file on its server. Nebula.pdf does the work in your browser instead, including OCR.",
+  "body": "<p>Merging two PDFs shouldn’t mean uploading a bank statement or an ID card to a stranger’s server. Nebula.pdf is nine tools (OCR, merge, split, compress, rotate, reorder and more) that run entirely in the browser.</p>\n<h2>The browser is the server</h2>\n<p>Page-level work like merging, splitting, rotating and reordering happens in JavaScript with pdf-lib: the file is read into memory, rebuilt, and handed back as a download. It never touches a network request.</p>\n<h2>OCR without a backend</h2>\n<p>Text recognition runs on Tesseract.js, which compiles the Tesseract engine to WebAssembly. It is slower than a server farm, but for a few pages it is fast enough, and the trade is worth it: the scan of your document stays on your device.</p>\n<h2>One file</h2>\n<p>The whole app is a single <code>index.html</code> with no build step, which makes it easy to read, easy to host anywhere and easy to audit. That matters for a privacy tool: you can check what it does.</p>\n<p>It’s open source and live, and it taught me how much heavy lifting a modern browser can do alone.</p>",
+  "mins": 1,
+  "date": "Oct 2026"
+ },
+ {
+  "slug": "sha256-by-hand",
+  "title": "I wrote SHA-256 by hand so it would stop being magic",
+  "tags": [
+   "Security",
+   "Blockchain",
+   "JavaScript"
+  ],
+  "blurb": "The mini blockchain on this site runs on a hash function written from the spec. What that taught me, in about thirty lines.",
+  "body": "<p>Every security course says “hash it with SHA-256” and moves on. I wanted to know what actually happens, so the blockchain demo in my Toolbox runs on a SHA-256 written from the specification, not on the browser’s crypto API.</p>\n<h2>Padding is half the job</h2>\n<p>The message becomes bytes, then a single <code>1</code> bit (the byte <code>0x80</code>) is appended, then zeros, until the length is 8 bytes short of a multiple of 64. Those last 8 bytes hold the original length in bits. After that, everything is processed in 64-byte blocks.</p>\n<h2>The constants aren’t arbitrary</h2>\n<p>The eight starting values are the first 32 bits of the fractional parts of the square roots of the first eight primes. The 64 round constants come from the cube roots of the first 64 primes. Instead of pasting a table, the page generates them:</p><pre><code>let n = 2, c = 0;\nwhile (c &lt; 64){\n  if (isPrime(n)){\n    if (c &lt; 8) H0[c] = (Math.sqrt(n) % 1 * 2 ** 32) | 0;\n    K[c] = (Math.cbrt(n) % 1 * 2 ** 32) | 0;\n    c++;\n  }\n  n++;\n}</code></pre>\n<h2>JavaScript fights you on 32-bit maths</h2>\n<p>Numbers in JavaScript are 64-bit floats, and SHA-256 lives on 32-bit words that wrap around. The fixes are small: force every sum back into 32 bits with <code>| 0</code>, use <code>&gt;&gt;&gt;</code> for unsigned shifts, keep the message schedule in an <code>Int32Array</code>, and write rotations as <code>(x &gt;&gt;&gt; n) | (x &lt;&lt; (32 - n))</code>.</p>\n<h2>Checking it</h2>\n<p>A hand-written hash is only useful if it matches the real one, so it is checked against Node’s <code>crypto</code> module. The inputs worth testing are the boring edges: the empty string, one character, and lengths close to the 64-byte block boundary, where padding mistakes show up.</p>\n<h2>What it changed</h2>\n<p>Change one character and about half the output bits flip. That avalanche is why the demo breaks every block after the one you edit: each block stores the previous block’s hash, so one change cascades. Proof of work is then plain brute force, raising a nonce until the hash starts with enough zeros. Three hex zeros is 12 bits, so about 4,096 tries on average.</p>\n<p>Use the Web Crypto API in real code. But hashes are not magic to me any more.</p>",
+  "mins": 2,
+  "date": "Oct 2026"
+ },
+ {
+  "slug": "acl-first-match",
+  "title": "First match wins: how ACLs actually decide",
+  "tags": [
+   "Networking",
+   "Security",
+   "CCNA"
+  ],
+  "blurb": "Extended ACLs read top to bottom and stop at the first match. Most ACL bugs are rules in the wrong order.",
+  "body": "<p>An access list looks like a list of rules. It behaves like a tiny program with one instruction: walk down, stop at the first line that matches, do what it says. If nothing matches, an invisible <code>deny ip any any</code> at the bottom drops the packet.</p>\n<h2>Wildcards are masks upside down</h2>\n<p>A wildcard mask marks the bits that may vary. <code>0.0.0.255</code> means “the last octet can be anything”, so <code>192.168.30.0 0.0.0.255</code> is the whole guest subnet. <code>host 10.0.50.10</code> is shorthand for a wildcard of <code>0.0.0.0</code>, and <code>any</code> is <code>0.0.0.0 255.255.255.255</code>.</p>\n<h2>The guest VLAN, in four lines</h2><pre><code>deny   ip  192.168.30.0 0.0.0.255 10.0.0.0 0.255.255.255\npermit tcp 192.168.30.0 0.0.0.255 any eq www\npermit tcp 192.168.30.0 0.0.0.255 any eq 443\npermit udp 192.168.30.0 0.0.0.255 host 8.8.8.8 eq domain</code></pre>\n<p>The order is the design. The deny comes first, so a guest reaching for the internal server on port 80 is dropped before the web permit ever sees it. Swap the first two lines and guests can browse the server.</p>\n<h2>Where it goes</h2>\n<p>Extended ACLs belong close to the source, so unwanted traffic dies before it crosses the network. In my campus lab that is inbound on R2’s guest-facing interface. Standard ACLs only see the source address, so they go close to the destination instead.</p>\n<h2>Mistakes worth watching for</h2>\n<ul><li>A broad permit higher up that quietly shadows a deny below it.</li><li>Forgetting the implicit deny, then wondering why DHCP or a routing protocol stopped working.</li><li>Port matches on a protocol that has no ports: <code>eq</code> only means something on <code>tcp</code> and <code>udp</code>.</li></ul>\n<p>The ACL tester in the Toolbox runs exactly this logic and shows which line matched. Try the reorder yourself.</p>",
+  "mins": 1,
+  "date": "Oct 2026"
+ },
+ {
+  "slug": "pinging-from-your-browser",
+  "title": "Pinging my sites from your browser",
+  "tags": [
+   "Web",
+   "Networking"
+  ],
+  "blurb": "The Live section times real round trips to my deployments from wherever you are. The trick, and what the numbers do and don’t mean.",
+  "body": "<p>Status pages usually measure from a server somewhere. I wanted the number from you, so the Live section times requests from your browser to each of my deployments every five seconds while it is on screen.</p>\n<h2>The trick: no-cors</h2>\n<p>A normal <code>fetch</code> to another domain is blocked unless that site sends CORS headers. A <code>mode: 'no-cors'</code> fetch is allowed, but the response is opaque: no status, no body. That is fine, because all I need is when it arrived.</p><pre><code>const t0 = performance.now();\nawait fetch(`${site}/favicon.ico?ping=${Date.now()}`, {mode: &#x27;no-cors&#x27;, cache: &#x27;no-store&#x27;});\nconst ms = Math.round(performance.now() - t0);</code></pre>\n<p>The query string and <code>cache: 'no-store'</code> keep the browser from answering out of its cache, and a six-second timeout with an <code>AbortController</code> marks a site as down.</p>\n<h2>What the number means</h2>\n<p>The first ping includes DNS, the TCP connection and the TLS handshake, so it is always the slowest. After that the browser reuses the connection and you see something close to the real round trip. Sites on Cloudflare and Vercel answer from an edge near you; bioinfoaus.ac.in lives on one server, and the gap shows.</p>\n<h2>What it doesn’t mean</h2>\n<p>An opaque response can’t tell a 200 from a 500, so “answering” means the server responded, not that the page is healthy. It is a latency check, not a health check, and the page says so.</p>\n<p>The sparkline next to each site keeps the last 24 samples. Nothing is stored: close the tab and it is gone.</p>",
+  "mins": 1,
+  "date": "Oct 2026"
+ },
+ {
+  "slug": "three-bugs-this-site",
+  "title": "Three bugs this site taught me",
+  "tags": [
+   "three.js",
+   "CSS",
+   "Debugging"
+  ],
+  "blurb": "A shield that kept turning into a cube, a 3D lab that drew nothing, and a button nobody could click. Each one was a single line.",
+  "body": "<p>This portfolio is one HTML file with three.js for the 3D. Building it turned up three bugs worth writing down, because each looked mysterious and each was one line.</p>\n<h2>1. The shield that turned into a cube</h2>\n<p>The hero’s particles are supposed to hold the AG shield until a timer morphs them into a network and then a cube. Instead they cycled shapes within seconds of loading, even though the morph value in JavaScript read <code>0</code>. Rendering the same positions with a plain material showed a perfect shield, so the data was fine and the shader was not.</p>\n<p>The morph was following the clock, as if it were reading the time uniform. The vertex shader declared its uniforms in one comma-separated line. Declaring each uniform on its own line fixed it:</p><pre><code>// before\nuniform float uMorph, uTime, uForce, uPx;\n// after\nuniform float uMorph;\nuniform float uTime;\nuniform float uForce;\nuniform float uPx;</code></pre>\n<p>Lesson: when a value behaves like time, check what it is actually bound to.</p>\n<h2>2. The 3D lab that drew nothing</h2>\n<p>Sometimes the campus lab rendered as an empty box with every label piled in the top-left corner. three.js loads asynchronously, and if it finished while the lab was hidden, for example with the résumé page open, the canvas measured itself as 0 by 0 and the camera’s aspect ratio became <code>NaN</code>. It only re-measured on window resize.</p>\n<p>The fix was a <code>ResizeObserver</code> on the stage, which fires when an element goes from hidden to visible, plus a guard that never renders at zero size.</p>\n<h2>3. The button nobody could click</h2>\n<p>The floating “Ask my AI” button did nothing when clicked, but worked perfectly when triggered from code. The chat panel used the <code>hidden</code> attribute, and its CSS set <code>display:flex</code>. The attribute is just <code>display:none</code> at the weakest possible specificity, so the class won: an invisible panel sat on top of the button and swallowed every click.</p><pre><code>.ask[hidden]{display:none}\n.ask:not(.open){pointer-events:none}</code></pre>\n<p>Lesson: test with real clicks. Calling <code>.click()</code> from code skips hit-testing, which is exactly where this bug lived.</p>",
+  "mins": 2,
+  "date": "Oct 2026"
+ }
+];
+const noteBy = slug => NOTES.find(n => n.slug === slug);
+const meta = n => `<div class="nmeta"><span>${n.date}</span><span>${n.mins} min read</span><span>${n.tags.join(', ')}</span></div>`;
+function renderNotes(slug){
+  const n = noteBy(slug), box = $('#notesBody');
+  if (!n){
+    box.innerHTML = `<a class="btn ghost sm" href="#top">← Back to the site</a><h1>Notes</h1><p class="lede">Things I learned building lab websites, configuring networks and studying security.</p>
+      <ul class="notes-list">${NOTES.map(x => `<li><a href="#/notes/${x.slug}">${meta(x)}<h2>${x.title}</h2><p>${x.blurb}</p><span class="go">Read →</span></a></li>`).join('')}</ul>`;
+    return;
+  }
+  const i = NOTES.indexOf(n), next = NOTES[(i + 1) % NOTES.length];
+  box.innerHTML = `<a class="btn ghost sm" href="#/notes">← All notes</a><article class="note">${meta(n).replace('nmeta', 'nmeta" style="margin-top:34px')}<h1>${n.title}</h1><div class="prose">${n.body}</div></article>
+    <nav class="note-next" aria-label="More notes"><a class="mini" href="#/notes">All notes</a><a class="mini" href="#/notes/${next.slug}">Next: ${next.title} →</a></nav>`;
+}
+let routedPage = null, routedKey = null;
 function route(){
-  const on = location.hash === '#/resume', view = $('#resumeView');
-  if (on === !view.hidden){ routed = true; return; }
-  const swap = () => { view.hidden = !on; $('#top').hidden = on; document.title = on ? 'Résumé · Aman Goswami' : TITLE; scrollTo({top:0, behavior:'instant'}); };
-  reduce || !routed ? swap() : wave(null, on ? 'Résumé' : 'Aman', swap);
-  routed = true;
+  const [, page = '', slug = ''] = location.hash.match(/^#\/(resume|notes)(?:\/([\w-]+))?/) || [];
+  const key = page + '/' + slug;
+  if (key === routedKey) return;
+  const first = routedKey === null, samePage = page === routedPage;
+  routedKey = key; routedPage = page;
+  const swap = () => {
+    $('#resumeView').hidden = page !== 'resume'; $('#notesView').hidden = page !== 'notes'; $('#top').hidden = !!page;
+    if (page === 'notes') renderNotes(slug);
+    document.title = page === 'resume' ? 'Résumé · Aman Goswami' : page === 'notes' ? (noteBy(slug) ? `${noteBy(slug).title} · Aman Goswami` : 'Notes · Aman Goswami') : TITLE;
+    const el = !page && location.hash.length > 1 && document.getElementById(location.hash.slice(1));
+    el ? goTo(el.id) : scrollTo({top:0, behavior:'instant'});
+  };
+  reduce || first || samePage ? swap() : wave(null, page === 'resume' ? 'Résumé' : page === 'notes' ? 'Notes' : 'Aman', swap);
 }
 addEventListener('hashchange', route); route();
 $('#rsPrint').addEventListener('click', () => print());
@@ -2018,6 +2246,7 @@ const KB = [
   {k:['building now','working on','currently','in progress','right now','progress','bench'], a:'Right now: the MCML lab website (front end), deploying the MCML inventory, and planning the bioinfoaus.ac.in rework, alongside CCNA (three of six domains done) and Security+. The Building now section shows exactly which stage each one is in.'},
   {k:['network','routing','router','nas','localhost','self host','home lab','homelab','port forward'], a:'Recently learned in depth: configuring routers, static and dynamic routing, NAT and port forwarding, hosting services on localhost and the LAN, and setting up a NAS with network shares. It sits on top of the CCNA work and the Packet Tracer campus lab you can spin in 3D in the Lab section.'},
   {k:['github','repos','commits','contributions','open source'], a:'My GitHub is <a href="https://github.com/ErinOP-gltich" target="_blank" rel="noopener">@ErinOP-gltich</a>. The GitHub section on this page pulls it live: contributions, languages and recent activity. Most lab work lives in private repos, so the public graph is quieter than the real one.'},
+  {k:['notes','blog','writing','article','articles','write'], a:'I write short notes on what I build and learn: the PCBL site, the lab inventory, the bioinfoaus.ac.in migration, Nebula.pdf, SHA-256 by hand, how ACLs decide, and the bugs this site taught me. <a href="#/notes">Read the notes</a>.'},
   {k:['resume','cv','résumé','pdf'], a:'Here it is: <a href="#/resume">the résumé page</a>, with a PDF download and a print button.'},
   {k:['dopetoken','token','erc20','erc 20','solidity','ethereum'], a:'DopeToken is an ERC-20 token on the Sepolia testnet, built on OpenZeppelin and deployed with Hardhat, with tests for transfer, approve and transferFrom and a small dApp for balances and transfers. Testnet only, no real value.'},
   {k:['piezo','footstep','tile','hardware','engineering clinic','ecs','expo','arduino'], a:'The Engineering Clinics project: a floor tile with a piezo array under it that harvests energy from footsteps, rectified into storage, with a readout that logs voltage per step. The expo needs a working physical prototype, so the numbers are measured rather than simulated.'},
@@ -2083,6 +2312,8 @@ say('bot', 'Hi! I can answer questions about Aman’s projects, stack and experi
 const CMD = [
   {t:'Ask my AI', ic:'AI', run:() => openAsk()},
   {t:'Open the résumé', ic:'CV', run:() => location.hash = '#/resume'},
+  {t:'Read the notes', ic:'✎', run:() => location.hash = '#/notes'},
+  ...NOTES.map(n => ({t:n.title, ic:'✎', sub:'Note', run:() => location.hash = '#/notes/' + n.slug})),
   ...['work','building','skills','security','toolbox','live','github','craft','about','contact'].map(id => ({t:'Go to ' + id[0].toUpperCase() + id.slice(1), ic:'#', run:() => location.hash = '#' + id})),
   ...projects.map(p => ({t:p.title, ic:'▸', sub:'Project', run:() => openProject(p.id)})),
   {t:'Copy personal email', ic:'@', run:() => { navigator.clipboard.writeText('amanopp0690@gmail.com'); showToast('Copied amanopp0690@gmail.com'); }},
@@ -2690,6 +2921,7 @@ const TERM = {                                        // name: [help text, run(a
   mode:    ['switch side: mode tech | mode creative', a => { const m = {tech:'tech', technical:'tech', creative:'creative'}[a[0]]; if (!m) return 'usage: mode tech | mode creative'; closeTerm(); setMode(m); }],
   ask:     ['ask the site assistant, e.g. ask what is your stack', a => a.length ? answer(a.join(' ')) : 'usage: ask &lt;question&gt;'],
   nmap:    ['scan me', () => tint(NMAP)],
+  notes:   ['open my notes', () => { closeTerm(); location.hash = '#/notes'; }],
   echo:    ['print text', a => esc(a.join(' '))],
   date:    ['print the date', () => new Date().toString()],
   history: ['previous commands', () => hist.map((h, i) => `${String(i + 1).padStart(4)}  ${esc(h)}`).join('\n')],
