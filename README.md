@@ -22,7 +22,7 @@ A one-file portfolio in black, white and grey: a three.js code tunnel around a p
 
 ## About
 
-I'm **Aman Goswami**, a third-year B.Tech Computer Science & Engineering student at **VIT-AP University**. I build software that real people run: the PCBL lab's website, admin console and inventory system, the MCML lab's website (in progress), the bioinfoaus.ac.in rework, and **Cantilever**, my marketplace for architects. I'm working through **CCNA 200-301** and **CompTIA Security+**, and recently went deep on routers, routing, localhosting and NAS setup.
+I'm **Aman Goswami**, a third-year B.Tech Computer Science & Engineering student at **VIT-AP University**. I build software that real people run: the PCBL lab's website, admin console and inventory system, the MCML lab's website (in progress), the bioinfoaus.ac.in rework, **Cantilever**, my marketplace for architects, and **Clearance**, an iOS to-do app run like an airport that I'm designing in Figma. I'm working through **CCNA 200-301** and **CompTIA Security+**, and recently went deep on routers, routing, firewalls, localhosting and NAS setup; WireGuard, Nginx and Docker are next.
 
 > Open to internships, freelance front-end work and collaboration.
 
@@ -44,7 +44,7 @@ I'm **Aman Goswami**, a third-year B.Tech Computer Science & Engineering student
 |---|---|
 | **Proof** | A terminal that types `whoami`, `cat focus.txt` and a joke `nmap` scan, next to numbers that count up and are true. |
 | **Work** | Every project has an image: real screenshots of the live sites in a browser frame, captures of this page, and clearly labelled illustrations for lab builds. Each card has a status (*Live*, *Building*, *Planning*), a case study and a link to the real site. |
-| **Building now** | Progress bars that show which stage each job is in: the MCML website, the MCML inventory, the bioinfoaus.ac.in rework, CCNA and Security+. |
+| **Building now** | Progress bars that show which stage each job is in: Clearance, the MCML website, the MCML inventory, the bioinfoaus.ac.in rework, CCNA and Security+. |
 | **Skills** | A draggable 3D sphere of tool logos, and every skill rated *Solid*, *Working* or *Learning* across web, networking and self-hosting, network security and blockchain. |
 | **Security lab** | CCNA and Security+ progress against the official exam domains, with the Cisco and CompTIA marks, and the secure campus network as a three.js model: routers, three buildings, VLANs, packets, and the guest ACL drop as a dashed red path. Click a device or a layer for an explanation. |
 | **Toolbox** | A subnet calculator, a Cisco-style ACL tester with a line-by-line trace, a password strength checker, and a mini blockchain on a hand-written SHA-256. |
@@ -57,7 +57,7 @@ An After Effects-style motion timeline you can scrub, the design and video tools
 
 ### Pages
 
-- **[Notes](https://aman-goswami.pages.dev/#/notes):** nine short write-ups on my projects and what they taught me: the PCBL lab website, the lab inventory, forking one platform into two labs, the bioinfoaus.ac.in migration plan, Nebula.pdf, SHA-256 by hand, how ACLs decide, pinging my sites from your browser, and three bugs this site taught me.
+- **[Notes](https://aman-goswami.pages.dev/#/notes):** fifteen short write-ups. Three are on work in progress (designing Clearance, the MCML site, CCNA with Security+); the rest cover the PCBL site, the lab inventory, the two-lab fork, the bioinfoaus.ac.in migration, Nebula.pdf, recon in a home lab, reading email headers, DopeToken, SHA-256 by hand, how ACLs decide, live pings and three bugs this site taught me.
 - **[Résumé](https://aman-goswami.pages.dev/#/resume):** rendered from the same data as the site, with **Download PDF** and **Print**. Printing any page prints the résumé.
 - **Contact:** a short form that opens your own email app with the message filled in. Nothing is stored or sent by the page.
 
