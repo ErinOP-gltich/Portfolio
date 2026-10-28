@@ -271,6 +271,8 @@ h1 .thin{font-weight:300; color:var(--dim)}
 .skill-col h3{display:flex; justify-content:space-between; align-items:baseline; gap:10px}
 .skill-col h3 small{font:400 .72rem var(--mono); color:var(--dimmer); letter-spacing:.06em}
 .skill-list{list-style:none; margin:0; padding:0; display:grid; gap:4px}
+.skill-col:last-child:nth-child(odd){grid-column:1/-1}
+.skill-col:last-child:nth-child(odd) .skill-list{grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:40px}
 .skill-list li{display:grid; grid-template-columns:30px 1fr auto; gap:12px; align-items:center; padding:7px 8px; margin:0 -8px; border-radius:10px; font-size:.95rem; transition:background .25s}
 .skill-list li:hover{background:var(--panel-2)}
 .skill-list .ic{width:30px; height:30px; border-radius:8px; border:1px solid var(--line); display:grid; place-items:center; font:500 .58rem var(--mono); color:var(--dim); letter-spacing:0}
@@ -681,6 +683,7 @@ dialog[open]{animation:pop .3s var(--ease)}
   .tools, .acl, .pw, .about, .lab, .contact-row{grid-template-columns:1fr}
   .more-grid, .craft, .soft{grid-template-columns:1fr 1fr}
   .skills, .bench, .pings, .comp{grid-template-columns:1fr}
+  .skill-col:last-child:nth-child(odd) .skill-list{grid-template-columns:1fr}
   .comp{--lo:100px} .comp-stage{border-right:0; border-bottom:1px solid var(--line)}
   .ghc, .ghc.w8, .ghc.w4{grid-column:1/-1}
   .kv4{grid-template-columns:1fr 1fr}
@@ -1824,7 +1827,7 @@ const ico = k => ICONS[k] ? `<svg viewBox="0 0 24 24" aria-hidden="true" style="
 /* ---------- skills: [name, icon key or short glyph, solid | working | learning] ---------- */
 const SKILLS = {
   'Web development': [['HTML','html5','solid'],['CSS','css','solid'],['JavaScript','javascript','solid'],['React','react','solid'],['Supabase','supabase','solid'],['TypeScript','typescript','working'],
-    ['Tailwind CSS','tailwindcss','working'],['shadcn/ui','shadcnui','working'],['Vite','vite','working'],['three.js and WebGL','threedotjs','working'],['GSAP and Lenis','GS','working'],['Swift and SwiftUI','swift','working'],['Git and GitHub','git','working'],['Accessibility','a11y','working']],
+    ['Tailwind CSS','tailwindcss','working'],['shadcn/ui','shadcnui','working'],['Vite','vite','working'],['three.js and WebGL','threedotjs','working'],['GSAP and Lenis','GS','working'],['Git and GitHub','git','working'],['Accessibility','a11y','working']],
   'Networking and self-hosting': [['Router configuration','RTR','working'],['Static and dynamic routing','RIB','working'],['NAT and port forwarding','NAT','working'],
     ['Localhost and LAN hosting','127','working'],['NAS setup and network shares','NAS','working'],['Firewall rules and port filtering','FW','working'],
     ['Host and network firewalls','FW+','working'],['DNS and DHCP on the LAN','DNS','working'],['Cloudflare Pages and Vercel','cloudflare','working'],
@@ -1832,7 +1835,11 @@ const SKILLS = {
   'Network security': [['TCP/IP and subnetting','/24','solid'],['VLANs and trunking','.1Q','solid'],['Cisco Packet Tracer','cisco','solid'],['OSPF routing','OSPF','working'],
     ['ACLs and port security','ACL','working'],['Wireshark','wireshark','working'],['Nmap','nmap','working'],['VirtualBox home lab','virtualbox','working'],['Kali Linux','kalilinux','learning'],['Burp Suite','burpsuite','learning']],
   'Blockchain': [['Hashing and proof of work','#','solid'],['Node.js','nodedotjs','working'],['OpenZeppelin','openzeppelin','working'],['Hardhat','HH','working'],
-    ['Ethereum testnets','ethereum','working'],['Solidity','solidity','learning'],['ethers.js','ethers','learning']]
+    ['Ethereum testnets','ethereum','working'],['Solidity','solidity','learning'],['ethers.js','ethers','learning']],
+  'macOS apps': [['Swift','swift','working'],['SwiftUI','SUI','working'],['AppKit: panels, menu bar and windows','AK','working'],['Swift Package Manager, no Xcode','SPM','working'],
+    ['Unix sockets and Claude Code hooks','IPC','working'],['Code signing, Keychain and privacy permissions','SIG','working'],['EventKit: calendar and reminders','EK','working'],
+    ['AVFoundation: camera and media','AV','working'],['Core Audio and process taps','CA','learning'],['Vision: faces and QR codes','VN','learning'],
+    ['IOKit: battery and the motion sensor','IOK','learning'],['Objective-C helpers','OBJC','learning']]
 };
 document.querySelectorAll('[data-ico]').forEach(el => el.innerHTML = ico(el.dataset.ico));
 // the sphere only shows tools used on real projects, not certifications or things still being learned
@@ -2410,7 +2417,7 @@ const KB = [
   {k:['resume','cv','résumé','pdf'], a:'Here it is: <a href="#/resume">the résumé page</a>, with a PDF download and a print button.'},
   {k:['dopetoken','token','erc20','erc 20','solidity','ethereum'], a:'DopeToken is an ERC-20 token on the Sepolia testnet, built on OpenZeppelin and deployed with Hardhat, with tests for transfer, approve and transferFrom and a small dApp for balances and transfers. Testnet only, no real value.'},
   {k:['piezo','footstep','tile','hardware','engineering clinic','ecs','expo','arduino'], a:'The Engineering Clinics project: a floor tile with a piezo array under it that harvests energy from footsteps, rectified into storage, with a readout that logs voltage per step. The expo needs a working physical prototype, so the numbers are measured rather than simulated.'},
-  {k:['skill','stack','tech','language','know','tools','framework'], a:'Web: HTML, CSS, JavaScript, React and Supabase (solid), plus TypeScript, Tailwind, shadcn/ui, Vite and Git. Networking and self-hosting: router configuration, routing, NAT and port forwarding, LAN hosting and NAS setup. Security: subnetting, VLANs, OSPF, ACLs, port security, Nmap and Wireshark, with Kali and Burp Suite in progress. Blockchain: hashing and proof of work, Hardhat, OpenZeppelin, Solidity. Design: Figma, After Effects, Premiere Pro and Photoshop. The Skills section rates every one honestly.'},
+  {k:['skill','stack','tech','language','know','tools','framework'], a:'Web: HTML, CSS, JavaScript, React and Supabase (solid), plus TypeScript, Tailwind, shadcn/ui, Vite and Git. Networking and self-hosting: router configuration, routing, NAT and port forwarding, LAN hosting and NAS setup. Security: subnetting, VLANs, OSPF, ACLs, port security, Nmap and Wireshark, with Kali and Burp Suite in progress. Blockchain: hashing and proof of work, Hardhat, OpenZeppelin, Solidity. macOS apps, from building Notchie: Swift, SwiftUI, AppKit, Swift Package Manager, Unix sockets, code signing and EventKit, with Core Audio, Vision and IOKit in progress. Design: Figma, After Effects, Premiere Pro and Photoshop. The Skills section rates every one honestly.'},
   {k:['ccna','cisco','200-301','network cert'], a:'I’m on CCNA 200-301. Three domains are done (network fundamentals, network access, IP connectivity) and IP services is in progress; security fundamentals and automation come next. Every domain is paired with Packet Tracer labs, and the campus lab in the Security section is the result.'},
   {k:['security+','comptia','sy0','cert','certification'], a:'Two certifications are in progress: Cisco CCNA 200-301 and CompTIA Security+ SY0-701. Security+ is at general security concepts (done) and threats, vulnerabilities and mitigations (in progress). The Security section on this page tracks both against the official exam domains.'},
   {k:['tool','subnet','calculator','acl','firewall','password','blockchain','demo','try'], a:'Four of them, in the Toolbox section, all written from scratch with no libraries: a subnet calculator with a binary view, a Cisco-style firewall ACL tester with a line-by-line trace, a password strength checker with entropy and crack-time estimates, and a mini blockchain on a SHA-256 implementation I wrote by hand. They all run in your browser.'},
