@@ -22,7 +22,7 @@ A one-file portfolio in black, white and grey: a three.js code tunnel around a p
 
 ## About
 
-I'm **Aman Goswami**, a third-year B.Tech Computer Science & Engineering student at **VIT-AP University**. I build software that real people run: the PCBL lab's website, admin console and inventory system, the **Green Sun Technologies** website for a solar-lighting maker in Guwahati (live, with the client for sign-off), the MCML lab's website (in progress), the bioinfoaus.ac.in rework, **Cantilever**, my marketplace for architects, **Clearance**, an iOS to-do app run like an airport that I'm designing in Figma, and **DarkUnder**, a site for a fictional horror podcast whose sound is synthesized in the browser. I'm working through **CCNA 200-301** and **CompTIA Security+**, and recently went deep on routers, routing, firewalls, localhosting and NAS setup; WireGuard, Nginx and Docker are next.
+I'm **Aman Goswami**, a third-year B.Tech Computer Science & Engineering student at **VIT-AP University**. I build software that real people run: the PCBL lab's website, admin console and inventory system (now at [pcbl.net](https://pcbl.net)), the MCML lab's website and console (ready to launch), the bioinfoaus.ac.in rework, a website for **Green Sun Technologies**, a solar lighting company in Guwahati, **Notchie**, a macOS app for the MacBook notch, **Cantilever**, my marketplace for architects, **Clearance**, an iOS to-do app run like an airport that I'm designing in Figma, and **DarkUnder**, a site for a fictional horror podcast whose sound is synthesized in the browser. I'm working through **CCNA 200-301** and **CompTIA Security+**, and recently went deep on routers, routing, firewalls, localhosting and NAS setup; WireGuard, Nginx and Docker are next.
 
 > Open to internships, freelance front-end work and collaboration.
 
@@ -43,8 +43,8 @@ I'm **Aman Goswami**, a third-year B.Tech Computer Science & Engineering student
 | Section | What it does |
 |---|---|
 | **Proof** | A terminal that types `whoami`, `cat focus.txt` and a joke `nmap` scan, next to numbers that count up and are true. |
-| **Work** | Every project has an image: real screenshots of the live sites in a browser frame, captures of this page, and clearly labelled illustrations for lab builds. Each card has a status (*Live*, *Building*, *Planning*), a case study and a link to the real site. |
-| **Building now** | Progress bars that show which stage each job is in: the Green Sun website, Clearance, the MCML website, the MCML inventory, the bioinfoaus.ac.in rework, CCNA and Security+. |
+| **Work** | Every project has an image: real screenshots of the live sites in a browser frame, Notchie's own off-screen renders, captures of this page, and clearly labelled illustrations for lab builds. Each card has a status (*Live*, *Beta*, *Ready to launch*, *Designing*, *Planning*), a case study and a link to the real site. |
+| **Building now** | Progress bars that show which stage each job is in: Clearance, Notchie, the Green Sun website, the MCML website, the MCML inventory, the bioinfoaus.ac.in rework, CCNA and Security+. |
 | **Skills** | A draggable 3D sphere of tool logos, and every skill rated *Solid*, *Working* or *Learning* across web, networking and self-hosting, network security and blockchain. |
 | **Security lab** | CCNA and Security+ progress against the official exam domains, with the Cisco and CompTIA marks, and the secure campus network as a three.js model: routers, three buildings, VLANs, packets, and the guest ACL drop as a dashed red path. Click a device or a layer for an explanation. |
 | **Toolbox** | A subnet calculator, a Cisco-style ACL tester with a line-by-line trace, a password strength checker, and a mini blockchain on a hand-written SHA-256. |
@@ -57,7 +57,7 @@ An After Effects-style motion timeline you can scrub, the design and video tools
 
 ### Pages
 
-- **[Notes](https://aman-goswami.pages.dev/#/notes):** sixteen short write-ups. Three are on work in progress (designing Clearance, the MCML site, CCNA with Security+); the rest cover the Green Sun build, the PCBL site, the lab inventory, the two-lab fork, the bioinfoaus.ac.in migration, Nebula.pdf, recon in a home lab, reading email headers, DopeToken, SHA-256 by hand, how ACLs decide, live pings and three bugs this site taught me.
+- **[Notes](https://aman-goswami.pages.dev/#/notes):** seventeen short write-ups. Four are on work in progress (designing Clearance, the MCML site, CCNA with Security+, Claude Code in the notch); the rest cover the Green Sun catalogue, the PCBL site, the lab inventory, the two-lab fork, the bioinfoaus.ac.in migration, Nebula.pdf, recon in a home lab, reading email headers, DopeToken, SHA-256 by hand, how ACLs decide, live pings and three bugs this site taught me.
 - **[Résumé](https://aman-goswami.pages.dev/#/resume):** rendered from the same data as the site, with **Download PDF** and **Print**. Printing any page prints the résumé.
 - **Contact:** a short form that opens your own email app with the message filled in. Nothing is stored or sent by the page.
 
@@ -101,7 +101,7 @@ It also runs on GitHub Pages, Vercel or Netlify: publish the folder with `index.
 | To change… | Edit… |
 |---|---|
 | Colours and fonts | The CSS variables in `:root`. Fonts are Geist, Geist Mono and Instrument Serif. |
-| Projects | `projects`: status, url, blurb, bullets, stack, problem, built, learned, and `cv` (the résumé line). Images live in `SHOTS` under the same id. |
+| Projects | `projects`: status, url, blurb, bullets, stack, problem, built, learned, and `cv` (the résumé line). The first `FEATURED` get big cards. Images live in `SHOTS` under the same id, as 640×400 greyscale WebP. |
 | Notes | `NOTES`: slug, title, tags, blurb and the HTML body. Read time is worked out from the word count. |
 | Skills | `SKILLS`: `[name, icon or glyph, solid / working / learning]` |
 | Certifications | `CERTS`: each domain is `'done'`, `'now'` or `''` |
