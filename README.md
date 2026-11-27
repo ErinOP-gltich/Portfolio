@@ -42,10 +42,10 @@ I'm **Aman Goswami**, a third-year B.Tech Computer Science & Engineering student
 
 | Section | What it does |
 |---|---|
-| **Proof** | A terminal that types `whoami`, `cat focus.txt` and a joke `nmap` scan, next to numbers that count up and are true. |
+| **Proof** | A terminal that types `whoami`, `cat focus.txt` and a joke `nmap` scan, next to four labelled stat tiles that count up and are true (the live count comes from the project list). |
 | **Work** | Every project has an image: real screenshots of the live sites in a browser frame, Notchie's own off-screen renders, captures of this page, and clearly labelled illustrations for lab builds. Each card has a status (*Live*, *Beta*, *Ready to launch*, *Designing*, *Planning*), a case study and a link to the real site. |
-| **Building now** | Progress bars that show which stage each job is in: Clearance, Notchie, the Green Sun website, the MCML website, the MCML inventory, the bioinfoaus.ac.in rework, CCNA and Security+. |
-| **Skills** | A draggable 3D sphere of tool logos, and every skill rated *Solid*, *Working* or *Learning* across web, networking and self-hosting, network security and blockchain. |
+| **Building now** | One row per job, with a track of one segment per stage that shows where it is: Clearance, PCBL to Cloudflare, Notchie, Green Sun, the MCML website and inventory, a research showcase site, the bioinfoaus.ac.in rework, CCNA and Security+. |
+| **Skills** | A draggable 3D sphere of tool logos, and every skill rated *Solid*, *Working* or *Learning*, grouped by level as icon chips across web, networking and self-hosting, network security, blockchain and macOS apps. |
 | **Security lab** | CCNA and Security+ progress against the official exam domains, with the Cisco and CompTIA marks, and the secure campus network as a three.js model: routers, three buildings, VLANs, packets, and the guest ACL drop as a dashed red path. Click a device or a layer for an explanation. |
 | **Toolbox** | A subnet calculator, a Cisco-style ACL tester with a line-by-line trace, a password strength checker, and a mini blockchain on a hand-written SHA-256. |
 | **Live** | Real round-trip times from your browser to each of my deployments, every five seconds while the section is on screen, with sparklines. |
@@ -57,7 +57,7 @@ An After Effects-style motion timeline you can scrub, the design and video tools
 
 ### Pages
 
-- **[Notes](https://aman-goswami.pages.dev/#/notes):** seventeen short write-ups. Four are on work in progress (designing Clearance, the MCML site, CCNA with Security+, Claude Code in the notch); the rest cover the Green Sun catalogue, the PCBL site, the lab inventory, the two-lab fork, the bioinfoaus.ac.in migration, Nebula.pdf, recon in a home lab, reading email headers, DopeToken, SHA-256 by hand, how ACLs decide, live pings and three bugs this site taught me.
+- **[Notes](https://aman-goswami.pages.dev/#/notes):** seventeen short write-ups. Four are on work in progress (designing Clearance, the MCML site, CCNA with Security+, Claude Code in the notch); the rest cover the Green Sun catalogue, the PCBL site, the lab inventory, the two-lab fork, the bioinfoaus.ac.in migration, Nebula, recon in a home lab, reading email headers, DopeToken, SHA-256 by hand, how ACLs decide, live pings and three bugs this site taught me.
 - **[Résumé](https://aman-goswami.pages.dev/#/resume):** rendered from the same data as the site, with **Download PDF** and **Print**. Printing any page prints the résumé.
 - **Contact:** a short form that opens your own email app with the message filled in. Nothing is stored or sent by the page.
 
@@ -80,12 +80,14 @@ Everything works offline except the live pings, the GitHub data and three.js, wh
 
 ## Deploy
 
-The site is a Cloudflare Pages project called `aman-goswami`. Only two files are public, so deploy them from a clean folder:
+The site is a Cloudflare Pages project called `aman-goswami`. Only the page and the résumé are public, so `deploy.sh` copies just those two files to a temporary folder and publishes that:
 
 ```bash
-mkdir -p /tmp/ag && cp index.html Aman-Goswami-Resume.pdf /tmp/ag/
-npx wrangler pages deploy /tmp/ag --project-name aman-goswami --branch main
+./deploy.sh          # build the copy and deploy it
+./deploy.sh build    # only build the copy, to check it first
 ```
+
+On the copy, `scale.mjs` rewrites the CSS lengths so that past 1600 px wide (a big monitor, or a browser zoomed out) the page grows with the screen instead of shrinking into the middle. `index.html` in the repo stays as written.
 
 It also runs on GitHub Pages, Vercel or Netlify: publish the folder with `index.html` at the root.
 
@@ -95,6 +97,8 @@ It also runs on GitHub Pages, Vercel or Netlify: publish the folder with `index.
 .
 ├── index.html                 # the whole site: HTML, CSS, JS, inlined images and icons
 ├── Aman-Goswami-Resume.pdf    # printed from the #/resume page
+├── deploy.sh                  # publishes index.html + the PDF to Cloudflare Pages
+├── scale.mjs                  # makes the deployed copy grow on wide screens
 └── README.md
 ```
 
